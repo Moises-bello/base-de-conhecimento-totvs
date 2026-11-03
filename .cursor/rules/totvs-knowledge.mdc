@@ -1,0 +1,19 @@
+---
+description: Base global TOTVS (Fluig, RM, Protheus) — busca full-text de baixo custo
+alwaysApply: true
+---
+
+# Base de conhecimento TOTVS (global)
+
+Somente documentação oficial TOTVS, em `knowledge/`. Não liste pastas, não use `@` em pastas, não abra `.md` grandes inteiros nem `.cache/`.
+
+```bash
+.venv/bin/python tools/sync.py search "termos" --product fluig|rm|protheus [--source <fonte>]
+.venv/bin/python tools/sync.py show <caminho>                  # pequeno: inteiro; grande: sumário
+.venv/bin/python tools/sync.py show <caminho> --secao "nome"   # só a seção
+```
+
+- Qual fonte para cada assunto: `tools/catalog/_INDEX.md`. RM vago → `central-rm`; técnico → `tdn-rm`.
+- Cite a URL mostrada. Busca inconclusiva → pergunte tela/rotina/versão.
+
+Regras completas: `tools/config/global-ai-instructions.md` · Estrutura: `AGENTS.md`

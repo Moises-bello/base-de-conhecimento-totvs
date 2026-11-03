@@ -1,0 +1,58 @@
+---
+content_hash: dc077e519c0984ba834944bf69cb071bfd9f691fe15307d5637c5a27b3328ec6
+fetched_at: '2026-06-29T00:12:01.373725+00:00'
+page_id: '894386543'
+product: rm
+source: tdn-rm
+title: SQLs para validar Sped F200 e RET1800
+type: documentation
+url: https://tdn.totvs.com/display/LRM/SQLs+para+validar+Sped+F200+e+RET1800
+version: 4
+---
+
+Para facilitar a conferência dos valores apurados no F200 e no RET1800, utilize as consultas SQL abaixo. Porém caso o cliente utilize a data de compensação diferente da data da baixa, será preciso alterá-las para considerar essa informação:
+
+F200
+
+SELECT SUM(VALORBAIXA) + SUM(FLANBAIXA.VALORDESCONTO) VALOR\_SPED   
+  FROM FLANBAIXA (NOLOCK)  
+    JOIN FLAN (NOLOCK)  
+      ON FLAN.IDLAN = FLANBAIXA.IDLAN  
+    AND FLAN.CODCOLIGADA = FLANBAIXA.CODCOLIGADA  
+    JOIN XVENDAPARCELA(NOLOCK)  
+      ON XVENDAPARCELA.CODCOLLAN = FLAN.CODCOLIGADA  
+    AND XVENDAPARCELA.IDLAN = FLAN.IDLAN   
+WHERE  FLANBAIXA.DATACANCELBAIXA IS NULL
+
+    AND FLAN.CODCOLIGADA =  1 --colocar a coligada  
+    AND CAST(FLANBAIXA.DATABAIXA AS DATE) BETWEEN '2024-08-01' AND  '2024-08-31' --colocar a coligada  
+     AND FLANBAIXA.STATUS IN (0, 4)  
+     AND FLAN.CODAPLICACAO = 'X'  
+     AND FLAN.PAGREC IN (1,2)
+
+RET1800
+
+  SELECT SUM(CASE WHEN FLAN.PAGREC = 1 THEN FLANBAIXA.VALORBAIXA ELSE FLANBAIXA.VALORBAIXA \* -1 END) VALOR\_SPED,  
+               SUM(CASE WHEN FLAN.PAGREC = 1 THEN FLANBAIXA.VALORBAIXA ELSE 0 END) VALORBAIXADO\_A\_RECEBER,  
+               SUM(CASE WHEN FLAN.PAGREC = 2 THEN -1 \* FLANBAIXA.VALORBAIXA ELSE 0 END) VALORBAIXADO\_A\_PAGAR                 
+    FROM FLAN (NOLOCK)   
+      JOIN FCFO (NOLOCK)   
+        ON FCFO.CODCOLIGADA = FLAN.CODCOLCFO AND   
+               FCFO.CODCFO = FLAN.CODCFO  
+      JOIN FLANBAIXA (NOLOCK)   
+        ON FLANBAIXA.IDLAN = FLAN.IDLAN AND   
+               FLANBAIXA.CODCOLIGADA = FLAN.CODCOLIGADA
+
+LEFT JOIN FRELLAN (NOLOCK)  
+          ON FRELLAN.IDLAN = FLAN.IDLAN AND   
+                FRELLAN.CODCOLIGADA = FLAN.CODCOLIGADA AND   
+                FRELLAN.TIPOREL = 11                   
+       JOIN XVENDAPARCELA(NOLOCK)  
+         ON XVENDAPARCELA.CODCOLLAN = FLAN.CODCOLIGADA  
+       AND XVENDAPARCELA.IDLAN = FLAN.IDLAN   
+   WHERE FLAN.CODCOLIGADA =  1 --colocar a coligada  
+       AND FLANBAIXA.STATUS IN (0, 4)  
+       AND FLAN.CODAPLICACAO = 'X'  
+       AND FLAN.PAGREC IN (1,2)  
+       AND FLAN.VRPERDAFINANCEIRA = 0                            
+       AND CAST(FLANBAIXA.DATABAIXA AS DATE) BETWEEN '2024-08-01' AND  '2024-08-31'  --colocar as datas

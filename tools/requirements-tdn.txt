@@ -1,0 +1,5 @@
+# Dependências para espelhar tdn.totvs.com (Confluence + Cloudflare)
+-r requirements.txt
+playwright>=1.44.0
+markdownify>=0.13.1
+lxml>=5.2.0

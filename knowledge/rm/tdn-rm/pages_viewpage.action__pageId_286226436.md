@@ -1,0 +1,22 @@
+---
+content_hash: 2ebd72ba296e86b94ea236e337b853bcbe529f8ab84628fe6d78936830b5b757
+fetched_at: '2026-06-29T00:08:40.582963+00:00'
+page_id: '286226436'
+product: rm
+source: tdn-rm
+title: Artigo 58-A Paragrafos 6 e 7 - Regime de tempo parcial - Férias
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=286226436
+version: 6
+---
+
+# Férias
+
+|  |  |
+| --- | --- |
+| **Produto:** | RM |
+| **Versões:** |  |
+| **Ocorrência:** | Art. 58-A. § 6º É facultado ao empregado contratado sob regime de tempo parcial converter um terço do período de férias a que tiver direito em abono pecuniário.  Art. 58-A. § 7º As férias do regime de tempo parcial são regidas pelo disposto no art. 130 desta Consolidação.”(NR) CLT - Decreto Lei nº 5.452 de 01 de Maio de 1943 Aprova a Consolidação das Leis do Trabalho.  Art. 130 - Após cada período de 12 (doze) meses de vigência do contrato de trabalho, o empregado terá direito a férias, na seguinte proporção: (Redação dada pelo Decreto-lei nº 1.535, de 13.4.1977) I - 30 (trinta) dias corridos, quando não houver faltado ao serviço mais de 5 (cinco) vezes; (Incluído pelo Decreto-lei nº 1.535, de 13.4.1977) II - 24 (vinte e quatro) dias corridos, quando houver tido de 6 (seis) a 14 (quatorze) faltas; (Incluído pelo Decreto-lei nº 1.535, de 13.4.1977) III - 18 (dezoito) dias corridos, quando houver tido de 15 (quinze) a 23 (vinte e três) faltas; (Incluído pelo Decreto-lei nº 1.535, de 13.4.1977) IV - 12 (doze) dias corridos, quando houver tido de 24 (vinte e quatro) a 32 (trinta e duas) faltas. (Incluído pelo Decreto-lei nº 1.535, de 13.4.1977) § 1º - É vedado descontar, do período de férias, as faltas do empregado ao serviço. (Incluído pelo Decreto-lei nº 1.535, de 13.4.1977) § 2º - O período das férias será computado, para todos os efeitos, como tempo de serviço. (Incluído pelo Decreto-lei nº 1.535, de 13.4.1977)  Art. 130-A. Na modalidade do regime de tempo parcial, após cada período de doze meses de vigência do contrato de trabalho, o empregado terá direito a férias, na seguinte proporção: (Incluído pela Medida Provisória nº 2.164-41, de 2001) I - dezoito dias, para a duração do trabalho semanal superior a vinte e duas horas, até vinte e cinco horas; (Incluído pela Medida Provisória nº 2.164-41, de 2001) II - dezesseis dias, para a duração do trabalho semanal superior a vinte horas, até vinte e duas horas; (Incluído pela Medida Provisória nº 2.164-41, de 2001) III - quatorze dias, para a duração do trabalho semanal superior a quinze horas, até vinte horas; (Incluído pela Medida Provisória nº 2.164-41, de 2001) IV - doze dias, para a duração do trabalho semanal superior a dez horas, até quinze horas; (Incluído pela Medida Provisória nº 2.164-41, de 2001) V - dez dias, para a duração do trabalho semanal superior a cinco horas, até dez horas; (Incluído pela Medida Provisória nº 2.164-41, de 2001) VI - oito dias, para a duração do trabalho semanal igual ou inferior a cinco horas. (Incluído pela Medida Provisória nº 2.164-41, de 2001) Parágrafo único. O empregado contratado sob o regime de tempo parcial que tiver mais de sete faltas injustificadas ao longo do período aquisitivo terá o seu período de férias reduzido à metade. (Incluído pela Medida Provisória nº 2.164-41, de 2001) |
+| **Ambiente:** | Férias, Remuneração |
+| **Passo a passo:** | O RMLabore efetua o calculo e lançamento de um terço do período de férias a que tiver direito em abono pecuniário desde que seja parametrizado na marcação de férias do funcionário.  Conforme a reforma trabalhista o regime de tempo parcial passa a ter 30 dias de férias. Não mais proporcionalizando pela jornada de trabalho.  Para atender a legislação no campo “**Dias Direito (Jorn. Reduzida)**” na Opção "**Parâmetros / Cadastro Funcionários**" deverá retirar o valor de dias proporcioanalizado. Os sistema irá assumir o valor de 30 dias.  Abaixo um exemplo marcando 18 no campo “**Dias Direito (Jorn. Reduzida)**” e em seguida retirando este valor.  Campo com o valor de 18 no campo “**Dias Direito (Jorn. Reduzida)**”    Observe o cadastro de férias o campo “**Férias a marcar:**” o valor é 18    Ao mudar o valor do campo “**Dias Direito (Jorn. Reduzida)**” para vazio    No cadastro de férias é mostrado 30 dias no campo “**Férias a marcar**”    O Recigo de férias foi calculado em cima de **30 dias**, a saber **20 dias de gozo** de férias e **10 dias de abono,** que passa a ter direito o regime de tempo parcial ao abono. |
+| **Observações:** |  |

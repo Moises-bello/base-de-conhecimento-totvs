@@ -1,0 +1,65 @@
+---
+content_hash: 8bbe433080e129aa60ce1cb053e2f5d01b547a72e8eded7dd14d54519cebfaae
+fetched_at: '2026-06-29T00:09:37.930787+00:00'
+page_id: '425459654'
+product: rm
+source: tdn-rm
+title: Fato RH - Banco de Horas
+type: documentation
+url: https://tdn.totvs.com/display/LRM/Fato+RH+-+Banco+de+Horas
+version: 3
+---
+
+**Banco de Horas**
+
+---
+
+Nesta analise são extraídos dados referente ao Banco de Horas dos colaboradores, no IBM Cognos será disponibilizado relatórios como "Banco de Horas por Turno, Centro de Custos e Colaborador" entre outros.  
+    
+ Tabela Stage Área: HLO
+
+|  |  |  |
+| --- | --- | --- |
+| **DESCRIÇÃO** | **CAMPO**   **STAGE ÁREA** | **CAMPO NO RM** |
+| NÚMERO REGISTRO - PK | HLO\_RECNO | AUTOINC |
+| LINHA DE PRODUTO | HLO\_LINPRO | R |
+| INSTÂNCIA | HLO\_ISTCIA | 1 |
+| EMPRESA - FK | HLO\_EMPRES | MD5 (CODCOLIGADA) |
+| ESTABELECIMENTO - CÓDIGO | HLO\_FILIAL | CODFILIAL |
+| ESTABELECIMENTO - FK | HLO\_ESTABL | MD5(CODCOLIGADA + CODFILIAL) |
+| SINDICATO - FK | HLO\_SINDIC | MD5(PSINDIC.CODIGO) |
+| TURNO - FK | HLO\_TURNO | O RM NÃO POSSUI ESTA ENTIDADE |
+| MÃO DE OBRA - FK | HLO\_TIPMOB | O RM NÃO POSSUI ESTA ENTIDADE |
+| PLANO CENTRO CUSTO - FK | HLO\_PLCCST | O RM NÃO POSSUI ESTA ENTIDADE |
+| CENTRO DE CUSTO - FK | HLO\_CCUSTO | MD5(CODCCUSTO) |
+| COLABORADOR - FK | HLO\_COLABR | MD5(COLIGADA + PFUNC.CHAPA) |
+| UNIDADE DE NEGÓCIO - FK | HLO\_UNDNEG | O RM NÃO POSSUI ESTA ENTIDADE |
+| FAIXA SALARIAL - FK | HLO\_FXASAL | MD5(COLIGADA + CODFAIXA) |
+| MOEDA - FK | HLO\_MOEDA | - |
+| TIPO HORAS - FK | HLO\_TIPHRS | O RM NÃO POSSUI ESTA ENTIDADE |
+| REGIÃO - FK | HLO\_REGIAO | MD5(CODMUNICIPIO + CODETD) |
+| CATEGORIA SALARIAL - FK | HLO\_CATSAL | MD5(PCODRECEB.CODCLIENTE) |
+| CARGO - FK | HLO\_CARGO | MD5(COLIGADA + CODCARGO) |
+| NÍVEL HIERÁRQUICO - FK | HLO\_NIVHIE | O RM NÃO POSSUI ESTA ENTIDADE |
+| ESTADO CIVIL - FK | HLO\_ESTCIV | MD5(PCODESTCIVIL.CODCLIENTE) |
+| FAIXA ETÁRIA - FK | HLO\_FXAETA | O RM NÃO POSSUI ESTA ENTIDADE |
+| GRAU DE INSTRUÇÃO - FK | HLO\_GRAINS | MD5(PCODINSTRUCAO.CODCLIENTE) |
+| TEMPO CASA - FK | HLO\_TPCASA | MD5(COLIGADA + CHAPA + DATAADMISSAO) |
+| TEMPO CARGO - FK | HLO\_TPCARG | MD5(COLIGADA + CHAPA + DATAMUDANCA) |
+| RELAÇÃO TRABALHO - FK | HLO\_RELTRB | MD5(PTPFUNC.CODCLIENTE) |
+| DATA DE MOVTO DO BANCO DE HORAS | HLO\_DATA | ABANCOHORFUN.DATA |
+| QTDE HORAS BANCO HORAS | HLO\_QBCOHR | HLO\_QUANTEVALORES.QBCOHR |
+| VL HORAS BANCO HORAS | HLO\_VBCOHR | HLO\_QUANTEVALORES.VLRHR |
+| SEÇÃO – FK | HLO\_SECAO | MD5(COLIGADA + CODSECAO) |
+| LOCALIDADE | HLO\_LOCALI | O RM NÃO POSSUI ESTA ENTIDADE |
+| PLANO DE LOTAÇÃO | HLO\_PLOTAC | O RM NÃO POSSUI ESTA ENTIDADE |
+| UNIDADE DE LOTAÇÃO | HLO\_ULOTAC | O RM NÃO POSSUI ESTA ENTIDADE |
+|  |  |  |
+
+**Data de Extração:** Data Movto do Banco de Horas  
+    
+ **Conceito de Extração:** Fato - RH - Banco de Horas  
+    
+ **View:**  HLO\_BancoHoras - HLO\_QUANTEVALOR  
+    
+ **Parâmetros:**  Será utilizado somente os parâmetros de extração gerais.

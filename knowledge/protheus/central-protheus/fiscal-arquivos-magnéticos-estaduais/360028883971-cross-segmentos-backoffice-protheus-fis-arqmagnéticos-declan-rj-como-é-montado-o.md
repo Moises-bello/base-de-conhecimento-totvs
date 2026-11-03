@@ -1,0 +1,164 @@
+---
+article_id: 360028883971
+category: Fiscal Arquivos Magnéticos - Estaduais
+content_hash: 3a76a2d5f8cae0e8ee42f2d32a64a2f33ad018f41f71a8a2bbf4d46d3bff66e1
+fetched_at: '2026-06-28T22:42:10.723274+00:00'
+product: protheus
+section_id: 1500001546662
+source: central-protheus
+title: Cross Segmentos - Backoffice Protheus - FIS - Arq.Magnéticos - Declan RJ -
+  Como é montado os quadros F e G
+type: support-article
+updated_at: '2022-08-17T20:16:35Z'
+url: https://centraldeatendimento.totvs.com/hc/pt-br/articles/360028883971-Cross-Segmentos-Backoffice-Protheus-FIS-Arq-Magn%C3%A9ticos-Declan-RJ-Como-%C3%A9-montado-os-quadros-F-e-G
+---
+
+**Ocorrência**Como é montada a query para considerar os quadro F e G referencia a receita bruta  
+  
+**Ambiente**Microsiga Protheus – Livros Fiscais – A partir da versão 11.80  
+  
+**Causa**Como é feita a montagem dos valores dos quadro F e G referente a receita bruta
+
+**Solução**Query  dos Registros F e G (valor bruto )
+
+SELECT MONTH(SF2.F2\_EMISSAO) AS EMISSAO,
+
+SUM(SD2.D2\_VALBRUT) AS NVALBRUTO,
+
+ SUM(SD2.D2\_VALICM) AS NVALICM,
+
+SUM(SD2.D2\_BASEISS) AS NBASEISS,
+
+SUM(SD2.D2\_ICMSRET) AS NICMSRET,
+
+SUM(SFT.FT\_VALCONT) AS NVALCONT,
+
+SUM(SFT.FT\_VALPIS) AS NVALPIS,
+
+SUM(SFT.FT\_VALCOF) AS NVALCOF
+
+FROM SF2990 AS SF2 LEFT OUTER JOIN
+
+SD2990 AS SD2 ON SD2.D2\_FILIAL = '01'
+
+AND SF2.F2\_DOC = SD2.D2\_DOC
+
+AND SF2.F2\_SERIE = SD2.D2\_SERIE
+
+AND SF2.F2\_CLIENTE = SD2.D2\_CLIENTE
+
+AND SF2.F2\_LOJA = SD2.D2\_LOJA
+
+AND SD2.D\_E\_L\_E\_T\_ = ' '
+
+LEFT OUTER JOIN SFT990 AS SFT ON SFT.FT\_FILIAL = '01'
+
+AND SD2.D2\_DOC = SFT.FT\_NFISCAL
+
+AND SD2.D2\_SERIE = SFT.FT\_SERIE
+
+AND SD2.D2\_CLIENTE = SFT.FT\_CLIEFOR AND
+
+SD2.D2\_LOJA = SFT.FT\_LOJA
+
+AND SD2.D2\_ITEM = SFT.FT\_ITEM
+
+AND SFT.D\_E\_L\_E\_T\_ = ' '
+
+LEFT OUTER JOIN SB1990 AS SB1 ON SB1.B1\_FILIAL = ' '
+
+AND SD2.D2\_COD = SB1.B1\_COD
+
+AND SB1.D\_E\_L\_E\_T\_ = ' '
+
+ LEFT OUTER JOIN SF4990 AS SF4 ON SF4.F4\_FILIAL = '01'
+
+AND SD2.D2\_TES = SF4.F4\_CODIGO
+
+AND SF4.D\_E\_L\_E\_T\_ = ' '
+
+WHERE (SF2.F2\_FILIAL = '01')
+
+AND (SF2.F2\_EMISSAO >= '20150101') AND (SF2.F2\_EMISSAO <= '20151231')
+
+AND (SF2.F2\_TIPO IN ('N', 'C', 'P'))
+
+AND (SF2.F2\_VALFAT > 0)
+
+AND (SF2.D\_E\_L\_E\_T\_ = ' ')
+
+GROUP BY MONTH(SF2.F2\_EMISSAO)
+
+ORDER BY MONTH(SF2.F2\_EMISSAO)
+
+**--Devolução  (DEVE-SE SUBTRAIR O VALOR BRUTO DAS DEVOLUÇÕES.)**
+
+SELECT MONTH(SF1.F1\_EMISSAO) AS EMISSAO,
+
+      SUM(SD1.D1\_TOTAL) AS NVALBRUTO,
+
+      SUM(SD1.D1\_VALICM) AS NVALICM,
+
+      SUM(SD1.D1\_BASEISS) AS NBASEISS,
+
+      SUM(SD1.D1\_ICMSRET) AS NICMSRET,
+
+      SUM(SFT.FT\_VALCONT) AS NVALCONT,
+
+      SUM(SFT.FT\_VALPIS) AS NVALPIS,
+
+      SUM(SFT.FT\_VALCOF) AS NVALCOF
+
+FROM SF1990 AS SF1
+
+LEFT OUTER JOIN SD1990 AS SD1 ON SD1.D1\_FILIAL = '01'
+
+AND SF1.F1\_DOC = SD1.D1\_DOC
+
+AND SF1.F1\_SERIE = SD1.D1\_SERIE
+
+AND SF1.F1\_FORNECE = SD1.D1\_FORNECE
+
+AND SF1.F1\_LOJA = SD1.D1\_LOJA
+
+AND SD1.D\_E\_L\_E\_T\_ = ' '
+
+LEFT OUTER JOIN SFT990 AS SFT ON SFT.FT\_FILIAL = '01'
+
+AND SD1.D1\_DOC = SFT.FT\_NFISCAL
+
+AND SD1.D1\_SERIE = SFT.FT\_SERIE
+
+AND SD1.D1\_FORNECE = SFT.FT\_CLIEFOR
+
+AND SD1.D1\_LOJA = SFT.FT\_LOJA
+
+AND SD1.D1\_ITEM = SFT.FT\_ITEM
+
+AND SFT.D\_E\_L\_E\_T\_ = ' '
+
+LEFT OUTER JOIN SB1990 AS SB1 ON SB1.B1\_FILIAL = ' '
+
+AND SD1.D1\_COD = SB1.B1\_COD
+
+AND SB1.D\_E\_L\_E\_T\_ = ' '
+
+LEFT OUTER JOIN SF4990 AS SF4 ON SF4.F4\_FILIAL = '01'
+
+AND SD1.D1\_TES = SF4.F4\_CODIGO
+
+AND SF4.D\_E\_L\_E\_T\_ = ' '
+
+WHERE (SF1.F1\_FILIAL = '01')
+
+  AND (SF1.F1\_EMISSAO >= '20159901')
+
+  AND (SF1.F1\_EMISSAO <= '20151231')
+
+  AND (SF1.F1\_TIPO IN ('D'))
+
+  AND (SF1.D\_E\_L\_E\_T\_ = ' ')
+
+GROUP BY MONTH(SF1.F1\_EMISSAO)
+
+ORDER BY MONTH(SF1.F1\_EMISSAO)

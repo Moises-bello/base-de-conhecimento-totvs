@@ -1,0 +1,141 @@
+# Configuração das fontes de documentação Fluig.
+# Adicione novas fontes (RM, Protheus) copiando um bloco existente.
+
+# Caminhos (knowledge/, .cache/, tools/inputs/) ficam fixos em tools/mirror/paths.py.
+
+sources:
+  api-fluig:
+    enabled: true
+    type: static
+    product: fluig
+    export_markdown: false
+    base_url: https://api.fluig.com/latest/
+    allowed_hosts:
+      - api.fluig.com
+    extra_hosts:
+      - style.fluig.com
+    max_depth: 10
+    rate_limit_seconds: 0.3
+
+  style-guide:
+    enabled: true
+    type: static
+    product: fluig
+    export_markdown: true
+    base_url: https://style.fluig.com/
+    allowed_hosts:
+      - style.fluig.com
+    max_depth: 5
+    rate_limit_seconds: 0.3
+
+  tdn-fluig:
+    enabled: true
+    # API REST — headless, centenas de páginas sem confirmação manual por página
+    type: confluence-api
+    product: fluig
+    export_markdown: true
+    base_url: https://tdn.totvs.com
+    session_test_url: https://tdn.totvs.com/display/public/fluig/Central+de+ajuda
+    session_file: tdn-session.json
+    cql: 'type=page AND space=fluig'
+    api_page_size: 50
+    rate_limit_seconds: 0.5
+
+  central-protheus:
+    enabled: true
+    type: zendesk
+    product: protheus
+    export_markdown: true
+    base_url: https://centraldeatendimento.totvs.com
+    locale: pt-br
+    root_section_id: 360001794451
+    include_descendants: true
+    rate_limit_seconds: 0.3
+    # Seções adicionais "Linha Protheus" (Backoffice, Framework, etc.)
+    extra_root_section_ids:
+      - 1500001529881   # TOTVS Backoffice (Linha Protheus)
+      - 360011673134    # Framework (Linha Protheus)
+      - 360011673354    # TOTVS Manufatura (Linha Protheus)
+      - 360011673454    # TOTVS RH (Linha Protheus)
+      - 1500000623322   # TOTVS TMS (Linha Protheus)
+      - 1500000623182   # TOTVS Agro - Comercialização (Linha Protheus)
+      - 1500000596361   # TOTVS Agro - Beneficiamento (Linha Protheus)
+      - 7090413461015   # TOTVS WMS (Linha Protheus)
+      - 4403736822807   # TOTVS OMS (Linha Protheus)
+
+  central-rm:
+    enabled: true
+    type: zendesk
+    product: rm
+    export_markdown: true
+    base_url: https://centraldeatendimento.totvs.com
+    locale: pt-br
+    # Categoria inteira TOTVS RH (~12.500 artigos), não só a seção-índice
+    category_id: 1500000346941
+    include_descendants: true
+    rate_limit_seconds: 0.3
+
+  central-ciclo-vida:
+    enabled: true
+    type: zendesk
+    product: totvs
+    export_markdown: true
+    base_url: https://centraldeatendimento.totvs.com
+    locale: pt-br
+    category_id: 115002261768
+    include_descendants: true
+    rate_limit_seconds: 0.3
+
+  tdn-rm:
+    enabled: true
+    type: confluence-api
+    product: rm
+    export_markdown: true
+    base_url: https://tdn.totvs.com
+    session_test_url: https://tdn.totvs.com/display/public/LRM/TOTVS+Linha+RM
+    session_file: tdn-session.json
+    cql: 'type=page AND space=LRM'
+    cql_fallbacks:
+      - 'type=page AND space=LRM'
+      - 'type=page AND title ~ "RM"'
+    api_page_size: 50
+    rate_limit_seconds: 0.5
+    chunks_dir: chunks/tdn-rm
+
+  tdn-tec:
+    enabled: true
+    type: confluence-api
+    product: protheus
+    export_markdown: true
+    base_url: https://tdn.totvs.com
+    session_test_url: https://tdn.totvs.com/display/tec/TOTVSTEC
+    session_file: tdn-session.json
+    cql: 'type=page AND space=TEC'
+    api_page_size: 50
+    rate_limit_seconds: 0.5
+    chunks_dir: chunks/tdn-tec
+
+  sdk-fluig:
+    # Javadoc do Fluig SDK (api.fluig.com/old/sdk) — sem crawler; exportar com
+    # tools/scripts/fluig-api/export-fluig-old-docs.py sdk + `sync.py import-tdn ... --source sdk-fluig`
+    enabled: false
+    type: static
+    product: fluig
+    export_markdown: true
+    base_url: https://api.fluig.com/old/sdk/
+
+  rest-fluig:
+    # API REST pública (Enunciate) em api.fluig.com/old — recursos + VOs JSON; exportar com
+    # tools/scripts/fluig-api/export-fluig-old-docs.py rest + `sync.py import-tdn ... --source rest-fluig`
+    enabled: false
+    type: static
+    product: fluig
+    export_markdown: true
+    base_url: https://api.fluig.com/old/
+
+# Fontes futuras (TDN Confluence)
+#  tdn-protheus:
+#    enabled: false
+#    type: confluence-api
+#    product: protheus
+#    cql: 'type=page AND space=...'

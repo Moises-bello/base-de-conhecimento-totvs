@@ -1,0 +1,149 @@
+---
+content_hash: 6b197e9670d48ec0e44837ef20411fcb0059182944c3f9b0532debf47b909a53
+fetched_at: '2026-06-29T00:11:10.065815+00:00'
+page_id: '641158147'
+product: rm
+source: tdn-rm
+title: FISCAL01-16572 - DT DMA-BA - QUADROS 10/11 - ENTRADAS/SAÍDAS DE MERCADORIAS
+  E/OU AQUISIÇÕES DE SERVIÇOS DETALHADAS POR NATUREZA DA OPERAÇÃO
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=641158147
+version: 4
+---
+
+## **01. DADOS GERAIS**
+
+|  |  |
+| --- | --- |
+| Produto: | TOTVS |
+| Linha de Produto: | Linha RM |
+| Segmento: | Backoffice |
+| Módulo: | TOTVS Gestão Fiscal |
+| Função: | DMA-BA |
+| País: | Brasil |
+| Requisito/Story/Issue (informe o requisito relacionado) : | FISCAL01-16573/FISCAL01-16572 |
+
+## **02. SITUAÇÃO/REQUISITO**
+
+Implementação dos QUADROS 10/11 - ENTRADAS/SAÍDAS DE MERCADORIAS E/OU AQUISIÇÕES DE SERVIÇOS DETALHADAS POR NATUREZA DA OPERAÇÃO
+
+## **03. SOLUÇÃO**
+
+Lançamentos Fiscais com determinados Códigos de Natureza de Operação.
+
+CFOP Sintético:
+
+Saídas:
+
+Dentro do Estado:  
+1 = 5101,5102,5103,5104,5105,5106,5122,5123,5124,5125,5401,5402,5403,5405,5501,5502 ou >= 5109 e <= 5120
+
+2 = 5151,5152,5153,5155,5156,5408,5409
+
+3 = 5201,5202,5205,5206,5207,5208,5209,5210,5410,5411,5503
+
+4 = 5251,5252,5253,5254,5255,5256,5257,5258
+
+5 = 5301,5302,5303,5304,5305,5306,5307
+
+6 = 5351,5352,5353,5354,5355,5356,5360,5357
+
+7 = 5412,5413,5414,5415,5451,5931,5932,5933,5949 ou >= 5551 e <= 5557 ou >= 5901 e <= 5929
+
+Fora do Estado:  
+1 = 6122,6123,6124,6125,6401,6402,6403,6404,6501,6502 ou >= 6101 e <= 6120
+
+2 = 6151,6152,6153,6155,6156,6408,6409
+
+3 = 6201,6202,6205,6206,6207,6208,6209,6210,6410,6411,6503
+
+ 4 = 6251,6252,6253,6254,6255,6256,6257,6258
+
+5 = 6301,6302,6303,6304,6305,6306,6307
+
+6 = 6351,6352,6353,6354,6355,6356,6360,6357
+
+7 = 6929,6931,6932,6933,6949 ou >= 6412 e <= 6415 ou >= 6551 e <= 6557 ou >= 6901 e <= 6925
+
+Exterior:  
+1 = 7101,7102,7105,7106,7127,7501
+
+2 = 7201,7202,7205,7206,7207,7210,7211
+
+3 = 7251,7301,7358
+
+4 = 7551,7553,7556,7930,7933,7949
+
+Entradas:
+
+Dentro do Estado:  
+1 = 1101,1102,1111,1113,1116,1117,1118,1120,1121,1122,1124,1125,1126,1401,1403,1501
+
+2 = 1151,1152,1153,1154,1408,1409
+
+3 = 1201,1202,1203,1204,1205,1206,1207,1208,1209,1410,1411,1503,1504
+
+4 = 1251,1252,1253,1254,1255,1256,1257
+
+5 = 1301,1302,1303,1304,1305,1306
+
+ 6 = 1351,1352,1353,1354,1355,1360,1356
+
+7 = 1406,1551,1552
+
+8 = 1407,1556,1557
+
+9 = 1414,1415,1451,1452,1553,1554,1555,1933,1949 ou >= 1901 e <= 1926))
+
+Fora do Estado:  
+1 = 2101,2102,2111,2113,2116,2117,2118,2120,2121,2122,2124,2125,2126,2401,2403,2501
+
+2 = 2151,2152,2153,2154,2408,2409
+
+ 3 = 2201,2202,2203,2204,2205,2206,2207,2208,2209,2410,2411,2503,2504
+
+4 = 2251,2252,2253,2254,2255,2256,2257
+
+  5 = 2301,2302,2303,2304,2305,2306
+
+ 6 = 2351,2352,2353,2354,2355,2356
+
+ 7 = 2406,2551,2552
+
+ 8 = 2407,2556,2557
+
+9 = 2414,2415,2553,2554,2555,2933,2949 ou >= 2901 e <= 2925
+
+Exterior:  
+1 = 3101,3102,3126,3127
+
+ 2 = 3201,3202,3205,3206,3207,3211,3503
+
+3 = 3251,3301,3351,3352,3353,3354,3355,3356
+
+4 = 3551
+
+5 = 35566 = 3553,3930,3933,3949
+
+Quadro 10/11:  
+TipoRegistro       Fixo 10/11
+
+AnoReferencia      Ano Base
+
+MesReferencia      Mês Base
+
+InscricaoEstadual  Inscrição Estadual da Filial
+
+StatusES           Fixo E/S
+
+NumDetalhe         Gerado de Acordo com o Tipo Detalhe informado a frente das Naturezas Sintéticas
+
+TipoDetalhe        Gerado de Acordo com o Tipo Detalhe informado a frente das Naturezas Sintéticas
+
+VlrContabil        ValorCont
+
+VlrBaseCalculo     BASEREDICMS
+
+VlrIsentas         IsentoICMS
+
+VlrOutras          OutrosICMS

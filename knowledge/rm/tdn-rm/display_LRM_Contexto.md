@@ -1,0 +1,24 @@
+---
+content_hash: a18f8cf5eb24527c4e4a1f08823bafe30dd9d2c794b4801ec2be27c5cc11b2da
+fetched_at: '2026-06-29T00:06:20.350735+00:00'
+page_id: '221553983'
+product: rm
+source: tdn-rm
+title: Contexto
+type: documentation
+url: https://tdn.totvs.com/display/LRM/Contexto
+version: 133
+---
+
+# Contexto
+
+|  |  |
+| --- | --- |
+| **Produto:** | TOTVS HTML Framework |
+| **Versões:** | 12.1.8 e posteriores |
+| **Ocorrência:** | Contexto |
+| **Ambiente:** | WEB |
+| **Passo a passo:** | O contexto do RM no TOTVS HTML Framework pode ser manipulado através da API RMSRestContext que possui 3 métodos. Abaixo está a descrição de cada um desses métodos e seus respectivos endereços.   * **GetLastContext** Esse método deve ser utilizado para recuperar o último contexto utilizado pelo usuário. Os dados serão recuperados da tabela GUltimoContextoUsuario utilizando os mesmos serviços que o CorporeRM. *URL*: http://hostname/rm/api/rmsrestcontext?user={username} *Verbo*: GET * **SetContextItem** Esse método deve ser utilizado para salvar um ou mais valores de contexto na tabela GUltimoContextoUsuario. Não é necessário que todos os itens de contexto sejam enviados, somente os que possuem alguma alteração no seu valor. *URL*: http://hostname/rm/api/rmsrestcontext/setcontextItem?user={username} *Request Body*: [ { "caption": "string", "name": "string", "value": {} } ] *Verbo*: POST * **GetContextItemInfo** Este método deve ser utilizado para recuperar as informações detalhadas de um item do contexto. Essas informações são: a mensagem para seleção de valor, a mensagem quando não existem opções para seleção e todas as valores disponíveis para seleção do item. *URL*: http://hostname/rm/api/rmsrestcontext/getcontextiteminfo?user={username}&item={context item name}&module={module} *Verbo*: GET * **SetContextByTenantId** Este método deve ser utilizado para ajustar os valores do contexto do usuário basenado-se no tenantId do Fluig. *URL*: http://hostname/rm/api/rmsrestcontext/setcontextbytenantid?user={username} *Request Body*: "83614726000141\_MG" *Verbo*: POST     Para viabilizar a manipulação do contexto nas páginas que foram criadas utilizando o THF, foi criado o serviço **contextService** (AngularJS). O arquivo encontra-se dentro do diretório do THF em: "js/menu/services/service-context.js".  Para utilizar esse serviço, basta que o analista o injete em seus serviços e/ou controladores. É recomendável que o serviço seja utilizado ao invés de acessar diretamente a API afim de garantir que as regras de negócio sejam mantidas. Os métodos disponíveis no serviço são:   | Método | Parâmetros | Descrição | Exemplo | | --- | --- | --- | --- | | setContext(itemName, value) | * itemName - Nome do item de contexto * value - Novo valor do item de contexto | Altera o valor de um item de contexto. Os nomes dos itens de contexto que podem ser utilizados são:  codSistema, environment, codUsuario, codUsuarioServico, codColigada, codFilial, dataSistema, idPrj, codTipoCurso, codUnidadeBib, codLocPrt, eduTipoUsr, rhTipoUsr, chapaFuncionario, codigoExterno, exercicioFiscal | js0setContexttruetrue | | getLastContext(user, callback) | * user - Código do usuário * callback - Função a ser chamada após o contexto ser recuperado do banco de dados. | Recupera o último contexto do usuário. É uma função assíncrona. | js0getLastContexttruetrue | | getContextItemInfo(itemName, callback) | * itemName - Nome do item de contexto * callback - Função a ser chamada após as informações do item de contexto serem recuperadoas do banco de dados. | Recuperar as informações detalhadas de um item do contexto. Essas informações são: a mensagem para seleção de valor, a mensagem quando não existem opções para seleção e todas as valores disponíveis para seleção do item. | js0getContextItemInfotruetrue | |
+| **Observações:** | * Quando o contexto é alterado utilizando o Seletor de Contexto ou quando é utilizada a função setContext do serviço contextService, é disparado o evento **TOTVSEvent.currentContextChanged** para que seja possível identificar a mudança do contexto. O evento passa como parâmetro um array de itens de contexto que sofreram alterações em seu valor. Ex: $rootScope.$broadcast(TOTVSEvent.currentContextChanged, ['codColigada', 'idPrj']); * Todas as telas html do RM que são sensíveis ao contexto, devem assinar o evento **TOTVSEvent.currentContextChanged** afim de serem notificados sobre alterações no contexto. Para assinar o evento basta injetar o $rootScope e assinar o evento. Exemplo: js0Assinar Eventotruetrue 0) {   //...   }   });   };   }]);   });]]> * Todas as telas html do RM devem alterar o item de contexto **codSistema** assim que for iniciado algum de seus controllers. Isso é fundamental para que o módulo seja enviado corretamente para o servidor durante as requisições. |
+
+divs

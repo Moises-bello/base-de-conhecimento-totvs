@@ -1,0 +1,55 @@
+---
+content_hash: 081dbd93f280a3e168a24f80e004b761e2d1ca908b86519638a67f6ad1d6da8e
+fetched_at: '2026-06-29T00:09:28.568422+00:00'
+page_id: '423938709'
+product: rm
+source: tdn-rm
+title: Diagnóstico da Rastreabilidade dos Lançamentos Contábeis
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=423938709
+version: 3
+---
+
+A ferramenta "Diagnóstico de Rastreabilidade dos Lançamentos Contábeis" tem como objetivo diagnosticar e validar o vínculo das operações financeiras X contábeis e também identificar duplicidade dos lançamentos contábeis com relação à sua origem. O diagnóstico será realizado conforme o período indicado, em todos os registros da base de dados, indiferentemente do lote contábil. Ao acessar o módulo TOTVS Gestão Contábil será apresentado um aviso orientando a importância da execução desta ferramenta, este aviso  será apresentado a cada acesso ao sistema até que o diagnóstico seja executado e, caso não seja confirmada a sua execução, para ter acesso novamente à esta ferramenta basta acessar o menu 'Utilitários| Diagnóstico de Rastreabilidade dos Lançamentos Contábeis' ou para quem acessa o sistema pela nova interface que dá acesso a todos os seguimentos (RM.EXE), acesse o menu 'Escrituração Contábil|Ferramentas| Diagnóstico de Rastreabilidade dos Lançamentos Contábeis'
+
+Se existirem inconsistências, elas serão listadas para que possam ser analisadas e, caso confirmado, a própria ferramenta fará automaticamente as devidas correções, removendo os lançamentos inconsistentes.
+
+Ao final do processo serão apresentados os LOGs contendo informações sobre as atuações realizadas na base de dados.
+
+Atenção
+
+* Antes da execução desta ferramenta faça uma cópia de segurança (Backup), pois as correções autorizadas serão irreversíveis.
+* Recomendamos que execute esta ferramenta primeiramente em ambiente e em base de teste.
+* Somente usuário que tenha em seu perfil atribuição definida como 'Supervisor' terá permissão para autorizar a remoção dos lançamentos inconsistentes encontrados, porém aos demais será permitido executar o processo para diagnosticar e listar as possíveis inconsistências.
+
+Para a execução. acesse a ferramenta e indique um período para que seja feito o diagnóstico dos lançamentos financeiro X contábil. Se nenhum período for informado, será realizado o diagnóstico em todos os lançamentos da base.
+
+* Caso já tenha sido realizado algum ajuste, ou seja, já tenha sido incluído manualmente no TOTVS Gestão Contábil algum lançamento contábil para solucionar alguma inconsistência, no momento de indicar o período para a realização do diagnóstico isto deve ser levado em consideração. Neste caso, indique um período posterior ao período em que os lançamentos já foram acertados ou então remova os lançamentos contábeis que foram incluídos manualmente com o objetivo de acertar as inconsistências e execute o diagnóstico para todo o período.
+
+Selecione qual tipo de analise deseja realizar, a saber:
+
+**1.** Analisar Lançamentos Contábeis sem rastreabilidade lógica com o documento de origem. Esta análise consiste em verificar os lançamentos contábeis que tiveram origem no TOTVS Gestão Financeira, mas estão sem vínculo, ou seja, sem a rastreabilidade lógica com a origem (IDOPERACAO). Se esta opção for marcada, posteriormente todos os lançamentos encontrados nesta situação serão listados. Analise os lançamentos, se desejar visualize-os acessando os respectivos links (Visualizar) e, se estiver acessando o sistema com um usuário que tenha perfil 'Supervisor', marque os lançamentos que desejar que o sistema faça a remoção.
+
+Se for identificado mais de um lançamento (IDLANCAMENTO) sem rastreabilidade com a mesma operação (IDOPERACAO) e que sejam lançamentos de 'Estorno', 'Estornado' ou 'Ativo', a exclusão somente será executada se todos os lançamentos da respectiva operação forem selecionados, porem se for selecionado somente o lançamento 'Ativo' (aquele diferente de 'Estorno' ou 'Estornado'), o mesmo poderá ser excluído, pois este lançamento impacta diretamente no saldo contábil.
+
+Importante
+
+Em algumas situações o estorno de um lançamento contábil pode ter sido realizado em data diferente à sua data de inclusão. Nestes casos, conforme o período informado, o diagnóstico poderá listar apenas parte dos lançamentos de uma operação e, conforme descrito acima, a exclusão do lançamento não será executada. Nestes casos, informe um período mais abrangente para o diagnóstico.
+
+**2.** Analisar Lançamentos Contábeis duplicados em relação ao documento a origem. Esta análise consiste em verificar lançamentos contábeis que estejam duplicados em relação ao documento de origem, ou seja,  identifica os lançamentos contábeis 'Ativos' (STATUS = C) que estão vinculados em uma mesma operação financeira (para uma mesma operação financeira somente é permito um lançamento 'Ativo'). Se esta opção for marcada, posteriormente todos os lançamentos encontrados nesta situação serão listados. Analise os lançamentos, se desejar visualize-os acessando os respectivos links (Visualizar) e, se estiver acessando o sistema com um usuário que tenha perfil 'Supervisor', marque os lançamentos que desejar que o sistema faça a remoção.
+
+Importante
+
+É recomendável que após a exclusão dos lançamentos duplicados, as informações da origem no módulo TOTVS Gestão Financeira sejam conferidas para verificar se as contabilizações estão conforme o documento de origem.  Os dados da origem para conferências serão listados no LOG\_CONFERENCIA.
+
+Regra para Lançamentos Agrupados:
+
+* Se for identificado lançamento duplicado ou sem rastreabilidade lógica (vínculo) que esteja agrupado a outros lançamentos, somente a parte duplicada ou sem o vínculo será excluída do lançamento agrupado. Exemplo: Vamos supor que vários lançamentos contábeis originados do módulo financeiro foram agrupados em um único lançamento no módulo contábil, totalizando R$ 5.000,00. Um dos lançamentos que o compõe está duplicado e possui o valor de R$ 200,00. Ao fazer a exclusão deste lançamento duplicado somente a parte (ou o valor) equivalente a ele será excluído do lançamento agrupado que ficará agora com o valor de R$ 4.800,00.
+
+Para finalizar o processo com a exclusão dos lançamentos inconsistentes, será necessário  indicar um arquivo TXT para onde o sistema exportará todos os lançamentos excluídos no mesmo padrão de importação do sistema com possibilitando ao usuário guardar estas informações.
+
+Ao final do processo serão apresentados LOG's com informações dos lançamentos excluídos
+
+**Observação**
+
+No TOTVS Gestão Financeira, Utilitários foi disponibilizado o menu Diagnóstico das Contabilizações Financeiras, que tem como objetivo validar/corrigir inconsistências nas operações contábeis geradas a partir  dos Lançamentos Financeiros e de operações manuais no Extrato de Caixa,  gerenciados pelo TOTVS Gestão Financeira.

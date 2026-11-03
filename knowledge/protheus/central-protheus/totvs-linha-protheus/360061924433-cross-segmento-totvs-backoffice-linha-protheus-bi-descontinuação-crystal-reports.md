@@ -1,0 +1,29 @@
+---
+article_id: 360061924433
+category: TOTVS Linha Protheus
+content_hash: 91d7a7041cec6edab0056bee5cbcbfbc8f86aa27e5a75ef1e3318f8589d00dbe
+fetched_at: '2026-06-28T22:36:19.063048+00:00'
+product: protheus
+section_id: 360001794451
+source: central-protheus
+title: 'Cross Segmento - TOTVS Backoffice Linha Protheus - BI - Descontinuação: Crystal
+  Reports'
+type: support-article
+updated_at: '2024-11-04T17:00:48Z'
+url: https://centraldeatendimento.totvs.com/hc/pt-br/articles/360061924433-Cross-Segmento-TOTVS-Backoffice-Linha-Protheus-BI-Descontinua%C3%A7%C3%A3o-Crystal-Reports
+---
+
+![](https://jiratdncdncontent.blob.core.windows.net/tdn/icons/time.png) Tempo aproximado para leitura: **1 minuto**
+
+Prezado Cliente,   
+  
+Com a missão de aumentar a capacidade competitiva de seus clientes, a TOTVS vem constantemente trabalhando na evolução funcional e tecnológica de seus produtos e, por esse motivo, comunicamos que o produto ​Crystal Reports será descontinuado​ ​em ​30 de junho de 2021.   
+  
+De acordo com a Política de Ciclo de Vida de Software TOTVS, a partir da data de descontinuação publicada no Portal do Cliente, a TOTVS não irá evoluir ou dar manutenção para a funcionalidade descontinuada.   
+  
+Sugerimos aos clientes que ainda utilizam ​Crystal Reports ​migrem para ​o Smart View .  
+  
+A equipe TOTVS se coloca à disposição para esclarecer quaisquer dúvidas remanescentes e realizar todos os procedimentos necessários ao atendimento de suas solicitações, assegurando que os serviços e produtos fornecidos estejam sempre de acordo com a qualidade e satisfação que a TOTVS proporciona aos seus clientes.
+
+**Saiba mais:**  
+[Smart View](https://tdn.totvs.com/pages/releaseview.action?pageId=626926739)

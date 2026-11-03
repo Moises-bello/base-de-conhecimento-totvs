@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Busca na base TOTVS — use de qualquer pasta (Cursor ou VS Code).
+# A raiz é resolvida a partir deste script (tools/bin/), então mover a base não quebra o comando.
+KB_ROOT="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../.." && pwd)"
+
+if [[ ! -f "$KB_ROOT/tools/sync.py" ]]; then
+  echo "Base não encontrada: $KB_ROOT" >&2
+  exit 1
+fi
+
+exec "$KB_ROOT/.venv/bin/python" "$KB_ROOT/tools/sync.py" search "$@"

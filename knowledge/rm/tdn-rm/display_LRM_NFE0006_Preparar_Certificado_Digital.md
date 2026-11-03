@@ -1,0 +1,22 @@
+---
+content_hash: 2f89a579affe3a51247f9fc3ee8cbfa1431bb1e349904f953acec3ea448c3b9e
+fetched_at: '2026-06-29T00:06:28.075451+00:00'
+page_id: '233745948'
+product: rm
+source: tdn-rm
+title: NFE0006_Preparar_Certificado_Digital
+type: documentation
+url: https://tdn.totvs.com/display/LRM/NFE0006_Preparar_Certificado_Digital
+version: 8
+---
+
+# Assunto
+
+|  |  |
+| --- | --- |
+| **Produto:** | NF-e - Nota Fiscal Eletrônica |
+| **Versões:** | Todas |
+| **Ocorrência:** | Preparar Certificado Digital para Emissão de documentos eletrônicos |
+| **Ambiente:** | Preparar Certificado Digital para Emissão de documentos eletônicos |
+| **Passo a passo:** | **Introdução:**  Para emissão da NF-e/NFS-e/NFC-e/CT-e/MDF-e utilizando o sistema “TOTVS Gestão de Estoques, Compras e Faturamento” é necessário preparar o Certificado Digital com as unidades certificadoras para que o TSS assine e transmita os lotes contendo as NF-e/NFS-e/NFC-e/CT-e/MDF-e.  **OBSERVAÇÃO: O sistema “TOTVS Gestão de Estoques, Compras e Faturamento” só transmite NF-e/NFS-e/NFC-e/CT-e/MDF-e com CERTIFICADO DIGITAL MODELO A1, em arquivo com extensão pfx ou p12, de qualquer fabricante.**  **IMPORTANTE: o processo de importação e exportação do certificado digital só é necessário caso o certificado tenha menos de 7kb. Caso o certificado tenha mais de 7kb o procedimento deste passo a passo não é necessário.**  O certificado Digital deve ser importado em uma maquina.  Exemplo:  **Primeiramente vamos mostrar como chegar na tela de importar certificado no Internet Explorer e depois no Google Chrome. Após chegar na tela de Importar Certificado vamos continuar com a importação de forma única, já que nos navegadores o procedimento é igual.**  **Internet Explorer 11**  Abra o navegador de Internet e acesse o menu, Ferramentas,  Opções da Internet.    Na janela que abrirá clique em “Certificados” na aba “Conteúdo”. Ira abrir outra janela nesta janela clique em “Importar”.    Para continuar no Internet Explorer ir para o Tópico "Importação do Certificado para o Navegador"  **Google Chrome:**  Abra o navegador do google chrome e acesse o menu Configurações.    Na nova aba aberta, clicar em "Mostrar configurações avançadas"    Clicar em Gerenciar Certificados | Importar    Para continuar no Google Chrome ir para o Tópico "Importação do Certificado para o Navegador"    **Importação do Certificado para o Navegador**  Será aberto o Assistente de importação de Certificado avance a primeira tela e na segunda selecione o certificado que será utilizado e avance. Na tela seguinte coloque a senha do Certificado e marque as opções de “Ativar Proteção de alta segurança para chaves particulares”, “Marcar esta chave como exportável” e clique em “Avançar” até concluir.    Depois de importado ele aparecerá na lista de certificado conforme tela abaixo       Selecione o Certificado e clique em “Exportar” (figura anterior) Avance ate a tela a baixo e selecione a opção “Sim, exportar a chave particular”.     Na tela seguinte deixe as opções marcadas conforme figura abaixo.    **Nas próximas telas deverão ser preenchidos a nova senha do certificado digital, o nome e local que o arquivo será salvo.**    RM Nucleus.exe  Entre no RM Nucleus no menu Opções | Parâmetros | RM Nucleus | Integrações | Fiscal | Parâmetros por Filial, clica duas vezes em cima da filial na etapa "Certificado Digital 1/2" selecione o certificado que foi exportado pelo processo citado nas etapas anteriores deste documento. No campo senha deve ser informada a senha que foi digitada no fim da exportação do arquivo.  RM.exe  Entre no RM no menu Ambiente | Parâmetros | Gestão de estoque, compras e faturamento | Integrações | Fiscal | Parâmetros por Filial, clica duas vezes em cima da filial na etapa "Certificado Digital 1/2" selecione o certificado que foi exportado pelo processo citado nas etapas anteriores deste documento. No campo senha deve ser informada a senha que foi digitada no fim da exportação do arquivo. |
+| **Observações:** | Para mais informações:  [Consulte o WikiHelp TOTVS](http://wikihelp.totvs.com.br/WikiHelp/FIS/FIS.ECF.aspx)    **COMUNIDADE** [R@Materiais e Suprimentos](http://fluig.totvs.com/portal/p/10097/subject/rmateriais)    **Canais de Atendimento:**  **Abertura de Chamados** Através do Portal Totvs [www.suporte.totvs.com.br](http://www.suporte.totvs.com.br/)  **Telefônico:** 4003-0015 Escolhendo as opções 2 – (Software), 2 – (Suporte Técnico), 3 – (RM), 5 – (Materiais) |

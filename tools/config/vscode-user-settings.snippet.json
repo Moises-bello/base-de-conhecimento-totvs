@@ -1,0 +1,5 @@
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    "Para perguntas sobre TOTVS (Fluig, RM, Protheus) ou SQL RM: use a base em <CAMINHO_DA_BASE> — sync.py search ou totvs-search. Não invente tabelas/colunas. Detalhes em tools/config/global-ai-instructions.md dessa pasta."
+  ]
+}

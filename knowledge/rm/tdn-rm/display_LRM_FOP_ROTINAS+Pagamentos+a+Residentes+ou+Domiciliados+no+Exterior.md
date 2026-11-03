@@ -1,0 +1,24 @@
+---
+content_hash: 1ae294aa4912d99d69cd3bdbc2a53256d8f2cc8ca3be63d06adac204f4d97cb7
+fetched_at: '2026-06-29T00:08:51.820336+00:00'
+page_id: '338367653'
+product: rm
+source: tdn-rm
+title: FOP_ROTINAS Pagamentos a Residentes ou Domiciliados no Exterior
+type: documentation
+url: https://tdn.totvs.com/display/LRM/FOP_ROTINAS+Pagamentos+a+Residentes+ou+Domiciliados+no+Exterior
+version: 92
+---
+
+# DIRF - Pagamentos a Residentes ou Domiciliados no Exterior
+
+|  |  |
+| --- | --- |
+| **Produto:** | TOTVS Folha de Pagamento |
+| **Versões:** | 12.1.17.222 ou Superiores  12.1.18.143 ou Superiores  12.1.19.101 ou Superiores |
+| **Ocorrência:** | Como Fazer o Recolhimento das Verbas Provenientes a Pagamentos de Funcionários Residentes ou Domiciliados no Exterior |
+| **Ambiente:** | Rotinas Anuais - DIRF / Informe de Rendimentos |
+| **Observações:** | Os valores dessas verbas não serão consideradas como rendimento tributável no Informe de Rendimentos |
+| **Passo a Passo:** | O histórico de Cadastro de dados do Residente ou domiciliado no exterior, tem por finalidade identificar pagamentos feitos a beneficiários no exterior e informar para a Receita Federal do Brasil, através da DIRF. Este processo está disponível somente na versão 12.1.12 ou superiores. Procedimento Para fazer o cadastro, basta acessar: Administração de Pessoal | Funcionários | Anexos | Folha de Pagamento | Dados do Residente ou Domiciliado no Exterior.  O sistema abrirá um anexo de uma tela solicitando o preenchimento de todos os dados de residente ou domiciliado no exterior do funcionário. Para incluir um novo registro, basta clicar no ícone novo que o sistema irá abrir uma interface que possibilite o cadastro. Após preencher os campos com as informações referente a alocação do beneficiário no exterior, clique em salvar:  Em seguida, para que o sistema identifique que o pagamento foi feito no exterior para o beneficiário, antes de realizar o lançamento dos eventos que compõe os rendimentos pagos a residentes ou domiciliados no exterior, o registro cadastrado deve ser informado no cadastro do funcionário, na pasta situação, no campo 'Alocação do residente ou domiciliado no exterior',  Após a vinculação do cadastro de residente ou domiciliado no exterior ao cadastro de funcionário, no processo de lançamento de eventos na ficha financeira do funcionário, a alocação do residente ou domiciliado no exterior é incluída automaticamente no período da ficha financeira para identificar os pagamentos realizados a residentes no exterior.  Também é possível inserir ou excluir a alocação de residente ou domiciliado no exterior direto na Ficha Financeira, na aba Domiciliado no Exterior.    **Gerando a DIRF**   Para gerar a DIRF em arquivo, para residentes ou domiciliados no exterior, basta selecionar a opção 'Pagou rendimentos a residentes ou domiciliados no exterior', nos parâmetros da Coligada, na aba DIRF em arquivo | Declarante.    Informações no programa DIRF:      **Obs.: As verbas pagas para residentes ou domiciliados no exterior não são consideradas para o código de receita 0561 e devido a isso não saem no Informe de Rendimentos.** Informações Adicionais Na pasta Dados Cadastrais, no cadastro de Dados do Residente ou domiciliado no Exterior é necessário informar o País de residência fiscal do beneficiário do rendimento. Para este campo no arquivo da DIRF, a receita espera um código disponibilizado em uma tabela de códigos de Países (Instrução Normativa). O sistema disponibiliza a funcionalidade para atender o cadastrado do código de País, no cadastro de endereços, na aba do eSocial.  Para realizar o cadastro de código do País, para que seja retornado no relatório da DIRF em arquivo de acordo com a tabela de códigos de Países da Receita Federal, o usuário deve executar os passos abaixo:    * Classificação de País  Acessar: eSocial (beta) | Endereços | Classificação de Países, clicar em novo. O sistema irá abrir uma interface para inserir um novo registro. O usuário deve informar um identificador e uma descrição, clicar em salvar.     * Codificação de País   Acessar: eSocial (beta) | Endereços | Países | Anexos | Codificação de Países. No anexo que abrir, clicar em novo. O sistema irá abrir uma interface para inserir um novo registro. O usuário deve informar o código da classificação, cadastrado no menu Classificação de Países e informar o código do País de acordo com tabela disponibilizada pela Receita Federal para cada País, clicar em salvar.       * Conceito de Classificação para Códigos De Países   Acessar: Configurações | Parametrizador | 06.07 – eSocial | De Para de Endereços. No campo 'Conceito de Classificação para Códigos de Países' inserir o código de Classificação de Países cadastrado acima em Classificação de Países. Feito isto, avançar até concluir a parametrização do processo. |
+
+divs

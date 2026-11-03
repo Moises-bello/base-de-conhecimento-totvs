@@ -1,0 +1,150 @@
+---
+content_hash: 2cbacbac1c5e434dff63dc52edbbe6957a6f025426c846e8cb803f252d544db8
+fetched_at: '2026-06-29T00:09:27.520548+00:00'
+page_id: '423938532'
+product: rm
+source: tdn-rm
+title: Relatório Razão Sintético
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=423938532
+version: 11
+---
+
+**Aba 'Dados'**
+
+O relatório Razão Sintético, está disponível em Relatórios | Razão, e tem a finalidade de demonstrar a movimentação dos lançamentos existentes de forma agrupada por movimentação diária da conta contábil, onde atualmente é possível verificar tanto no Lote Zero (utilizado normalmente) quanto em Lotes "N", selecionando a numeração do mesmo.
+
+Deve ser informado um intervalo de Datas deseja para a impressão do Relatório. Estas data deverão estar dentro do Período Contábil vigente, e somente serão considerados os lançamentos escriturados neste período informado.
+
+**Buscar do histórico contábil:** Esta opção pode ser marcada quando o período selecionado já estiver fechado. Com a mesma habilitada não há necessidade de reabri-lo.
+
+**Basear na data de cotação:** Esta opção permite a impressão dos valores baseado na data da cotação dos lançamentos. Marcando a mesma, o sistema buscará os lançamentos que possuírem a data de cotação dentro do período informado no intervalo de Datas (Esta informação será buscada do campo DATA2 da tabela CPARTIDA). Atenção!! Esta opção somente será visualizada nesta janela, se nos "Parâmetros | Lançamentos" a opção "Usa segundo valor" estiver marcada e for informada uma moeda no parâmetro "Símbolo moeda 2º valor".
+
+Selecione o tipo de Razão: Neste "checkbox" deve ser definido o tipo de relatório, neste caso, Razão Gerencial / Contábil.
+
+**Lote Contábil:** Permite filtrar um ou mais Lotes, sendo Zero ou Lote N.
+
+Serão considerados todos os registros que estiverem nos lotes informados pelo usuário.
+
+Apenas os lotes das coligadas selecionadas no filtro de coligada estarão disponíveis para seleção.
+
+Quando a opção de histórico contábil for marcada, o filtro por lote será desabilitado e será considerado o lote 0.
+
+Um aviso será exibido para que o usuário decida se prossegue ou não com a alteração.
+
+Se informou lote que não o Lote 0, não serão exibidos os saldos anteriores de períodos já liberados de contas sem movimentação após a liberação e antes da data inicial de movimentação informada.
+
+Caso nenhum lote seja informado no filtro será considerado o lote 0.
+
+**Contas com movimentação e sem saldos:** Quando marcado esta opção, as Contas contábeis que possuírem movimentação no período e que possuam saldo inicial zerado serão impressas.
+
+**Contas com movimentação e com saldos:** Quando marcado esta opção, todas as contas contábeis do seu plano de contas que possuírem saldo diferente de zero e movimentação no período informado serão impressas.
+
+**Totalizar**
+
+* **Total Geral:** Emite ao final da impressão o total de Débitos, Créditos e Saldo Anterior.
+* **Total por Dia:** Emite ao termino dos lançamentos de um dia a totalização de lançamentos do mesmo. Quando habilitado desabilita a opção Total por Mês.
+* **Total por Mês:** Emite ao termino dos lançamentos de um mês a totalização de lançamentos do mesmo. Quando habilitado desabilita a opção Total por Dia.
+
+**Selecionar Coligada/Filial/Departamento:** Esta opção permitirá selecionar Coligadas, Filiais e Departamentos cujos dados serão processados e consolidados no relatório. Não marcando o campo "Todas as coligadas", somente a coligada corrente ficará disponível nesta opção.
+
+Observação: Selecionando a opção "Todas Coligadas" o tipo de valor "Cotação de Outra Moeda", existente na aba Filtros, ficará desabilitado, pois o relatório razão não realiza consolidação multimoeda.
+
+**Quebrar página Por Filial:** Ao habilitar esta opção, o relatório será impresso realizando uma quebra a cada nova filial. Neste caso, os dados de cada filial serão apresentados separadamente no relatório.
+
+**Aba 'Filtros'**
+
+**Conta Contábil:** Ao selecionar esta opção será possível configurar uma faixa de Contas Contábeis. Sendo assim, será apresentada uma nova aba de etapa obrigatória de preenchimento, para que seja informada uma, várias, ou até mesmo um intervalo de contas. O relatório será emitido exclusivamente para os lançamentos que possuírem as contas determinadas.
+
+**Centro de Custo:** Ao selecionar esta opção será possível configurar uma faixa de Centros de Custo. Sendo assim, será apresentada uma nova aba de etapa obrigatória de preenchimento, para que seja informada um, vários, ou até mesmo um intervalo de centros de custo.
+
+**Observação:** Caso seja habilitada a opção de filtrar centros de custo Ativo/Inativo, a seleção da faixa de Centros de Custo irá considerada esta informação. O relatório será emitido exclusivamente para os lançamentos que possuírem os centros de custo determinados.
+
+**Histórico:** Permite emitir o relatório filtrando por um ou mais Históricos Padrões. Os históricos selecionados podem ser considerados ou desconsiderados para a emissão do relatório, há uma opção disponibilizando tal flexibilidade.
+
+**Participante:** Ao selecionar esta opção será possível configurar uma faixa de Participantes. Sendo assim, será apresentada uma nova aba de etapa obrigatória de preenchimento, para que seja informada um, vários, ou até mesmo um intervalo de Participantes. Para o relatório serão considerados apenas os registros que cujos participantes estiverem na seleção de contas definida pelo usuário.
+
+**Tipo de valor / moeda:** Ao selecionar esta opção será apresentada uma nova aba de etapa obrigatória de preenchimento, para que seja informada o tipo de valor desejado. Na aba Informações de valores e moedas que será apresentada, haverá as seguintes opções:
+
+**Tipo de valor:**
+
+* Primeiro Valor - Imprime o relatório utilizando o valor da moeda corrente.
+* Segundo Valor - Imprime o relatório utilizando o segundo valor cadastrado nos lançamentos.
+* Cotação de Outra Moeda - Marcando esta opção, você poderá imprimir os relatórios utilizando uma cotação específica de outra moeda, além da moeda principal e da segunda moeda. Desta forma você poderá escolher no ato da impressão em qual moeda seu relatório será impresso.
+* Dados (cotação de outra moeda): Será possível selecionar apenas uma das moedas utilizadas nos processos contábeis multimoeda. Elas estão disponíveis na etapa Moedas dos parâmetros de sistema.
+
+**Imprimir valores em milhares:** Marcando esta opção, quando o relatório for impresso, os valores dos lançamentos serão impressos em milhares, ou seja, divididos por 1000, e no cabeçalho do relatório será impresso o texto "Valores em milhares" para que o usuário identifique que, neste relatório, seus valores estarão impressos divididos por 1000. Lembre-se: os relatórios expressos em milhares (dividido por 1000) poderão apresentar algumas diferenças em seus valores se tomarmos como base os relatórios convencionais. Isto se dá pelo fato de que ao dividir os valores por 1000 será feito o arredondamento destes valores, que segue as regras de arredondamento da própria máquina. Então, uma conta que apresente o seu saldo final zerado (total de débitos - total de créditos = 0) poderá apresentar saldo final diferente de zero nos relatórios expressos em milhares devido ao fato do arredondamento dos valores.
+
+**Não Imprimir os Centavos:** Opção disponível somente se a opção "Imprimir valores em milhares" estiver marcada. Marcando esta opção, somente a parte inteira dos valores expressos em milhares será impressa. Os valores apurados para a emissão do relatório serão divididos por 1000 (mil), o resultado desta divisão será arredondado e somente a parte inteira deste resultado, depois que foi arredondado, será impressa. Os centavos encontrados neste resultado não serão impressos.
+
+* Valor apurado para emissão: R$ 1.583.796,00
+* Valor dividido por 1000 (mil): R$ 1.583,796
+* Valor arredondado: R$ 1.583,80
+* Valor impresso: R$ 1.593
+
+Se esta opção estiver marcada e, se para alguma conta o resultado encontrado nesta divisão for menor ou igual à 0,49, esta conta será impressa no relatório porém com o valor 0 (zero).
+
+**Centro de Custo(Ativo/Inativo):** Determina se utiliza apenas os centros de custo ativos, inativos ou todos. Serão considerados apenas os lançamentos compatíveis com este filtro.
+
+**Conta Contábil(Ativo/Inativo):** Determina se utiliza apenas as contas contábeis ativas, inativas ou todas. Serão considerados apenas os lançamentos compatíveis com este filtro.
+
+**Aba 'Layout'**
+
+**Atributo de página para o Livro Razão** Permite definir configurações de impressão de página do relatório. Será aberta a aba Configuração do Livro Razão, com as opções:
+
+**Impressão em formato livro:** Habilitará a alteração dos campos Número do Razão, onde poderá ser informado manualmente o número do Livro a ser impresso, e Número Máximo de Páginas, que determinará quantas páginas o livro terá, sendo que quando a impressão atingir a quantidade informada, será automaticamente criado um novo livro e a numeração atualizada. **Não reiniciar a contagem de páginas a cada mudança de livro:** Com esta opção marcada, ao iniciar um novo Livro, a sequência de páginas permanecerá conforme a quantidade já emitida anteriormente e não será reiniciada. **Reservar a última página do livro para o termo de fechamento:** Determina que na contagem saltará a última página da impressão para que possa ser emitido o Termo de fechamento.
+
+**Definir reinicio da numeração da página do Razão:** Habilitará um campo para informar a partir de qual página ele deverá reiniciar a contagem de páginas, sem que este fato influencie na impressão da quantidade de livros.
+
+**Usar os parâmetros de formato de impressão de saldos para Débitos/Créditos:** Marcando esta opção os valores de débito, crédito e movimento serão impressos respeitando o parâmetro de formato de impressão de saldos das contas. Verifique os parâmetros de impressão de Saldo.
+
+**Não exibir sinais nos valores de débito/crédito:** Marcando esta opção os valores das colunas de débitos e créditos serão impressos sem sinal. Observação: Ao habilitar esta opção, a de "Impressão de débitos e créditos respeita o parâmetro de formato de impressão de Saldos fica desabilitada".
+
+**Alterar título:** Permite definir um novo título para o relatório, conforme desejado (máximo de 28 caracteres).
+
+**Inserir texto adicional no final:** Permite a digitação de texto adicional ao final do relatório. Será habilitado o botão que quando clicado será apresentada uma tela onde o usuário possa informar o texto desejado.
+
+**Inserir observação abaixo do título:** Permitirá inserir um texto adicional que sairá impresso no cabeçalho do relatório, abaixo do título, e poderá ter o tamanho de no máximo 10 linhas. Será habilitado um botão que ao clicar será apresentada uma tela onde o usuário possa informar o texto desejado. Caso o texto seja muito extenso o mesmo será truncado.
+
+**Exibir dados dos centros de custos no cabeçalho:**  
+Marcando esta opção, o sistema exibirá o código do centro de custo no cabeçalho do relatório.  
+Essa opção será habilitada quando um ou mais centros de custos forem inseridos na aba Filtro| Centro de custo. Caso contrário, ficará desabilitada.  
+O sistema exibirá apenas os centros de custos que couberem na linha.
+
+**Transporte de Saldo:** Ao marcar esta opção, os saldos das contas serão transportados de uma página para outra do relatório quando ultrapassarem a página (disponível apenas para o razão analítico).
+
+**Definir Atributos de Página:** Determina a forma para a impressão do relatório.
+
+**Data de emissão:** Esta opção determina a data desejada para constar no cabeçalho do relatório como sendo a Data de Emissão do mesmo. Observação: Por default essa impressão será sempre a data do dia, mas a mesma poderá ser manualmente alterada para a data desejada.
+
+**Quantidade de página por arquivo:** A fim de atender bases de dados com grande volume, poderá ser determinada uma limitação da quantidade de páginas que cada máquina consegue processar e exibir. Ao definir a quantidade de páginas por arquivo, o relatório será quebrado conforme a quantidade informada for atingida, tornando possível o processamento e a exibição do relatório. Ao final do processamento será exibida uma tela com as quebras de páginas que foram geradas na emissão do relatório para conferência.
+
+**Orientação:** O relatório passa a possuir a orientação Retrato e Paisagem para a impressão e geração de arquivos. Com a orientação Paisagem selecionada, a aba Campos terá sua capacidade de impressão estendida.
+
+**Margem**
+
+**Esquerda, Direita, Superior e Inferior:** Permite a configuração das margens Direita, Esquerda, Superior e Inferior do relatório. Podendo aumentar ou reduzir as margens utilizando espaçamentos entre 0 e 10 para a margem Direita, entre 0 e 25 para margem Esquerda e entre 0 e 10 para margem Superior e Inferior.
+
+**Definir reinicio da renumeração de página:** Digite o número de página inicial para impressão. Com a opção utilizar Numeração Sequencial de páginas marcada, este campo assumirá o valor da sequência automática gerada pelo sistema, não podendo ser alterado.
+
+**Atributos de páginas**
+
+**Tipo de Arquivo:** É possível gerar o relatório nos formatos CSV, JPEG, HTML, XLS, MHT, RTF, TXT e PDF. A impressão pode ser apenas visualizada ou Salva em algum **Diretório de Destino** conforme informado.
+
+**Aba 'Campos'**
+
+Nesta pasta estão todos os campos existentes e que poderão ser ou não impressos, podendo também modificar os tamanhos de impressão de campo, sempre respeitando o Limite pré-estabelecido do relatório. Para isto basta habilitar os campos que você escolher. Campos: Data, N. Lcts, Débitos, Créditos e Saldo Atual.  
+A variação de tamanho de impressão dos campos será alterada conforme a seleção da Orientação Paisagem ou Retrato.  
+   
+**ATENÇÃOS ÀS PARAMETRIZAÇÕES!!**  
+**O relatório somente será impresso de maneira correta quando utilizados os formatos de folha A4 ou Carta (neste caso, a impressora padrão da máquina deve possuir estas configurações).**
+
+**Para os demais formatos, o relatório será gerado mas nem sempre as configurações de impressão serão seguidas.**
+
+Mais Informações
+
+* Razão Analítico; (oficial para legislação)
+* Razão Gerencial / Contábil;
+* Razão Contábil / Gerencial;
+* ;
+* .

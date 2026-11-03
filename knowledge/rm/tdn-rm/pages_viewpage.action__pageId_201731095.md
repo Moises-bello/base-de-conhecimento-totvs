@@ -1,0 +1,68 @@
+---
+content_hash: ba022002757e19e507f5d6491852d2d9b65ff3bc5c249b568b9abc8e0481bd03
+fetched_at: '2026-06-29T00:06:06.390161+00:00'
+page_id: '201731095'
+product: rm
+source: tdn-rm
+title: ER_PCREQ-6570_SAÚDE_CIH_FLUIG_12.1.9_ CADASTRO_DE_MÉDICOS
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=201731095
+version: 7
+---
+
+| **Este documento é material de especificação dos requisitos de inovação, trata-se de conteúdo extremamente técnico.** |
+| --- |
+
+### Informações Gerais
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| **Especificação** | | | |
+| **Produto** | TOTVS CIH | **Módulo** | CADASTROS |
+| **Segmento Executor** | SAÚDE | | |
+| **Projeto1** | SAÚDE\_CIH\_FLUIG | **IRM1** | PCREQ-6525 |
+| **Requisito1** | PCREQ-6570 | **Subtarefa1** |  |
+| **Chamado2** |  | | |
+| **Release de Entrega Planejada** |  | **Réplica** |  |
+| **País** | ( X ) Brasil  (  ) Argentina  (  ) Mexico  (  ) Chile  (  ) Paraguai  (  ) Equador  (  ) USA  (  ) Colombia   (  ) Outro \_\_\_\_\_\_\_\_\_\_\_\_\_. | | |
+| **Outros** | *<Caso necessário informe outras referências que sejam pertinentes a esta especificação. Exemplo: links de outros documentos ou subtarefas relacionadas>.* | | |
+
+   Legenda: 1 – Inovação 2 – Manutenção (Os demais campos devem ser preenchidos para ambos os processos). 
+
+### (Obrigatório)
+
+## Objetivo
+
+ 
+
+Criação de cadastro de Médicos
+
+### (Obrigatório)
+
+## Definição da Regra de Negócio
+
+Os Médicos devem possuir no seu cadastro, sua especialidade médica, até 3 delas, seu CRM, Estado ao qual pertence e email.
+
+### Opcional
+
+## Protótipo de Tela
+
+*<Caso necessário inclua protótipos de telas com o objetivo de facilitar o entendimento do requisito, apresentar conceitos e funcionalidades do software>.*
+
+**Protótipo 01**
+
+### Opcional
+
+## Fluxo do Processo
+
+1. Usuário Administrador loga no sistema
+2. Acessar a Opção Cadastros
+3. Acessar a Opção Médicos
+4. Cadastrar as Informações solicitadas
+
+### (Opcional)
+
+### (Opcional)
+
+| **Este documento é material de especificação dos requisitos de inovação, trata-se de conteúdo extremamente técnico.** |
+| --- |

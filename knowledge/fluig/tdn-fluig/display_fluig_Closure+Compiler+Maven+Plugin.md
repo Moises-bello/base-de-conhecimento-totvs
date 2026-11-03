@@ -1,0 +1,93 @@
+---
+content_hash: 10a2d756131f39180f0a4bb7d38885ea7439b31f3d68b25fc051b2a562f4a116
+fetched_at: '2026-06-28T21:35:29.469369+00:00'
+page_id: '748072137'
+product: fluig
+source: tdn-fluig
+title: Closure Compiler Maven Plugin
+type: documentation
+url: https://tdn.totvs.com/display/fluig/Closure+Compiler+Maven+Plugin
+version: 8
+---
+
+2true.\*ndicenone
+
+## Introdução
+
+Essa documentação tem como objetivo explicar como é feita a configuração do plugin [Closure compiler Maven Plugin](https://github.com/blutorange/closure-compiler-maven-plugin)
+
+Hoje no Fluig plataforma utiliza-se o plugin YUI compressor para minificar arquivos CSS e JS. Porém o mesmo permanece inativo e sem atualização desde 2013 ficando um pouco ultrapassado e nos impossibilitando de utilizar novas tecnologias, como o ES6.
+
+## Fim do YUI Compressor?
+
+Não será possível remover completamente o YUI-Compressor de nosso produto pois o Closure Compiler não irá processar arquivos CSS, apenas JS. Sendo necessário a permanência do antigo para minificar a folha de estilo.
+
+## Configurando o plugin
+
+Os plugins são configurados nos pom.xml de cada projeto. Primeiramente devemos fazer com que o YUI-Compressor pare de minificar os arquivos JS, para isso na configuração já existente precisamos adicionar a seguinte tag dentro da configuração.
+
+No exemplo estaremos utilizando a widget: [sample-component-widget](https://git.fluig.com/projects/SAMPLES/repos/projetos/browse/sample-component/sample-component-widget)
+
+xmlConfluenceIgnorando arquivos JS - YUI Compressor
+…
+\*\*/\*.js
+…
+]]>
+
+Feito isso, podemos configurar o Closure Compiler. 
+
+xmlConfluenceExemplo de configuração usada no pom: sample-component-widgettrue
+com.github.blutorange
+closure-compiler-maven-plugin
+2.21.0
+
+
+default-minify
+
+minify
+generate-resources
+
+false
+${project.basedir}/src
+UTF-8
+main/webapp/resources
+resources
+\*\*/\*.js
+#{path}/#{basename}.#{extension}
+\*\*/${project.basedir}
+\*\*/\*.min.js
+\*\*/\*-min.js
+SIMPLE\_OPTIMIZATIONS
+
+OFF
+OFF
+OFF
+OFF
+OFF
+false
+false
+NO\_TRANSPILE
+false
+true
+]]>
+
+A documentação do mesmo pode ser acessada aqui: <https://blutorange.github.io/closure-compiler-maven-plugin/minify-mojo.html>
+
+Onde há a explicação de cada tag utilizada - abaixo estará a explicação de algumas configurações específicas.
+
+* **ClosureCompilationLevel** - irá definir o quão avançada será a minificação - no nível **ADVANCED\_OPTIMIZATIONS** é possível ter a ofuscação dos arquivos JS.
+* **Excludes** - Utilizamos o excludes para excluir algum tipo de arquivo específico da compilação.
+* **Skip** - Ignora a execução do plugin dentro do módulo declarado.
+
+Atenção
+
+Atualmente, caso o plugin não encontre um js dentro do source dir definido ele quebra. Por isso, em projetos onde o pom pai não possui arquivos a serem minificados, passamos o skip como true. Porém é necessário que em seus filhos haja a configuração:
+
+xmlConfluence
+com.github.blutorange
+closure-compiler-maven-plugin
+
+false
+]]>Atenção
+
+Hoje a minificação realizada nos arquivos javaScript pelo plugin pode ocasionar um conflito entre o template de string e o mecanismo de internacionalização i18n, podendo gerar inconsistências. Caso você não use internacionalização em seu JS, template string irá funcionar normalmente. Estamos trabalhando a fim de proporcionar uma solução em próximas versões.

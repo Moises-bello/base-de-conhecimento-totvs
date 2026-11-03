@@ -1,0 +1,25 @@
+---
+content_hash: ffbabdf856aa614bc85010f9864b3d734056935032c710ec56f05923d687d9b9
+fetched_at: '2026-06-29T00:08:59.647979+00:00'
+page_id: '364908781'
+product: rm
+source: tdn-rm
+title: Como gerar a Lotação Tributária - Evento S-1020?
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=364908781
+version: 88
+---
+
+|  |  |
+| --- | --- |
+| **Linha de Produto:** | RM |
+| **Segmento:** | Construção e Projetos |
+| **Módulo:** | TOTVS Folha de Pagamento |
+| **Função:** | Lotação Tributária |
+| **Situação/Requisito:** | Criação da lotação tributária para atender os especificações do eventos S-1020 para o eSocial |
+| **Solução/Implementação:** | Lotação Tributária.  A Lotação tem um conceito estritamente tributário e não físico e influi no método de cálculo da contribuição previdenciária para um grupo de segurados específicos, não refletindo necessariamente, o local de trabalho do empregado.  Identifica a classificação da atividade para fins de atribuição do código FPAS, a obra de construção civil, o contratante de serviço, ou uma condição diferenciada de tributação.  A Lotação Tributária, será gerada conforme a parametrização definida no TOTVS Folha de Pagamento.  Para as empresas que **NÃO** utilizam tomadores de serviços    A Lotação Tributária será somente uma visão do cadastro de seções centralizadoras de CNPJ e FPAS.      **OBS**: O botão "Incluir" não será apresentado na tela quando a coligada estiver parametrizada para **NÃO** utilizar tomadores de serviços e quebra de FPAS.    Para empresas que **UTILIZAM** Tomador de Serviço    Para correta geração da Lotação Tributária acesse: TOTVS Folha de Pagamento| Parametrizador| eSocial | Lotação Tributária    O código da Lotação Tributária será gerado de acordo com as informações definidas nos campos:    **Prefixo**: é opcional e seu tamanho mínimo é 1. Por default este campo vem desabilitado e com valor 0. Para habilitar é necessário marcar a opção 'utilizar prefixo'. Marcando esta opção, o campo prefixo referente ao código do prefixo fica habilitado para edição. Somente é permitido preencher este campo com o código com o mesmo tamanho da quantidade de caracteres informada. Este campo pode ser preenchido com alfanumérico.  **Coligada**: O campo tem como tamanho mínimo 3 e um caractere recebe a Letra C. Caso a base tenha alguma coligada onde o código tem  tamanho maior que 3, este campo deverá ser preenchido como mínimo este valor.  **Exemplo:** No cliente tem a coligada X com o código 9999, então o campo deve ser preenchido com o valor 5 e não pode ser menor. Neste caso o campo será de tamanho 5, pois também terá o caractere C.    **Sequencial**: O campo recebe o tamanho mínimo 7, sendo que um caractere é referente a Letra S.    **Exemplo:** Desta forma, a Máscara com mínimo de caracteres ficaria assim: PC999S999999 .          Após parametrização acesse:  TOTVS Folha de Pagamento| eSocial(beta)| Lotação Tributária, em Processo selecione 'Lotação Tributária".    Tipo da Lotação Default:  Selecione o tipo de lotação, conforme determinado na Tabela 10 do eSocial:    Selecione a coligada para qual deseja gerar a lotação tributária.      As lotações tributárias serão geradas considerando as seguintes condições:    1-  Para os tomadores informados no rateio do funcionário.    2-Tomador de Serviço que estiver vinculado ao afastamento do funcionário.    3- Tomador Empresa Vinculado no Parametrizador| Folha Normal| Tomador de Serviço.  Após execução do processo, as Lotações Tributárias serão visualizadas no cadastro de Lotação.  No exemplo abaixo, foi gerada uma Lotação Tributária para cada centralizadora de CNPJ, além de uma Lotação Tributária para cada tomador que atenda condições de geração.      Para empresas que utilizam mais de um FPAS por CNPJ    Para empresas com mais de um FPAS por CNPJ, é necessário parametrizar o código de quebra de FPAS.  Acesse: TOTVS Folha de Pagamento| Parametrizador| eSocial | Lotação Tributária  Marque o flag 'Utiliza quebra de FPAS' e defina a quebra onde o sistema deverá buscar o FPAS.        Com essa parametrização o sistema irá identificar em qual seção deve buscar o FPAS.    **Observação**: O código de FPAS deve ser maior que o código quebra CNPJ e menor igual máscara da seção.  Após gerar a Lotação Tributária é criado um registro para cada seção de quebra ??.?? que tenha FPAS preenchido, além de um uma Lotação Tributária para cada centralizadora de CNPJ.         Para empresas que utilizam mais de um FPAS por CNPJ e Tomador de Serviços  Nesse caso, será gerada Lotação Tributária para:  1- Seção centralizadora de CNPJ  2- Seção que atenda a quebra de FPAS preenchida.  3- Tomadores de Serviços que atendam a regra de geração de Lotação Tributária.  Acesse: TOTVS Folha de Pagamento| Parametrizador| eSocial | Lotação Tributária e realize a parametrização tanto da máscara para Lotação Tributária, quanto a quebra para FPAS.    Ao gerar a Lotação Tributária teremos:  Seção centralizadora de CNPJ.  Seção que atenda a quebra de FPAS.    Tomadores de Serviços que atendam a regra de geração de Lotação Tributária. |
+|  |  |
+|  |  |
+|  |  |
+
+divs

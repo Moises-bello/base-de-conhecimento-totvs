@@ -1,0 +1,84 @@
+---
+content_hash: 4d6c23bb3c723709ee0eaa7a4207c9999767e7e52d8d211c6651b756f08a9a36
+fetched_at: '2026-06-29T00:08:56.432197+00:00'
+page_id: '351376535'
+product: rm
+source: tdn-rm
+title: Evento S-1210 - Mapeamento
+type: documentation
+url: https://tdn.totvs.com/display/LRM/Evento+S-1210+-+Mapeamento
+version: 28
+---
+
+Leiautes1Leiaute S-1.3
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| Registro\_eSocial | Campo\_eSocial | Tabela\_RM | Coluna\_RM | Informações\_do\_calculo |
+| ideEvento | indRetif |  |  | Conforme manual |
+| ideEvento | nrRecibo |  | PROTOCOLO |  |
+| ideEvento | perApur |  |  | Informação recuperada através dos campos 'MESCOMP e ANOCOMP' da Tabela PESOCIALFOLHAMENSAL |
+| ideEvento | indGuia |  |  | Campo gerado com valor fixo '1' apenas para empregador com natuzera jurídica 402-2 - Segurado Especial |
+| ideEvento | tpAmb |  |  | Campo do parametrizador Etapa 1 - eSocial: Configurações Gerais (ESOCIALTPAMBIENTE) |
+| ideEvento | procEmi |  |  | Valor válido 1 (Valor Fixo) |
+| ideEvento | verProc |  |  | Versão do RM |
+| ideEmpregador | tpInsc |  |  | 21 ou 22 pessoa física, demais, pessoa jurídica |
+| ideEmpregador | nrInsc | GCOLIGADA | CGC |  |
+| ideBenef | cpfBenef |  |  |  |
+| infoPgto | dtPgto |  |  | A data do pagamento será definida de acordo com a data que possuir maior reincidência no envelope de pagamento. |
+| infoPgto | tpPgto |  |  | Campo será calculado de acordo com:  - Caso seja um recibo de férias, será retornado 7;  - Caso seja um Autonomo no Gestão Financeira: se a data de emissão ou data de vencimento do lançamento for anterior a data de obigatoriedade dos eventos periódicos será retornado 9, caso contrário será retornado 1;  - Se a situação do beneficiário for "Demitido":  \* Caso a data de demissão seja inferior ao primeiro dia do mes, será retornado 1;  \* Caso seja um funcionário sem vinculo, será retornado 3;  \* Demais casos será retornado 2;  - Demais casos, será retornado 1. |
+| infoPgto | perRef |  |  | Sendo autônomo do Gestão Financeira ou Externo então quando o Parâmetro "Considera Data de Emissão em vez de data de vencimento" em "Integrações \ Gestão Financeira" estiver marcado será informado o Ano e o Mês da data de Emissão se estiver desmarcado utilizará a data de vencimento.   Não sendo autônomo será de acordo com a competência do envelope de pagamento |
+| infoPgto | ideDmDev |  |  | Recupera o valor do campo PFFINANC.NROPERIODO. Quando se trata de autônomo do Gestão Financeira ou Externo obtêm o valor de suas respectivas movimentações |
+| infoPgto | vrLiq |  |  | Campo será calculado de acordo com:  - Caso o evento seja referente a um Autonomo Gestão Financeira ou Externo, será calculado através do total do lançamento financeiro/Importado menos o total de INSS, IRRF, SEST, SENAT e ISS.  - Nos demais casos, será calculado a somatória do total de proventos menos a somatória do total de descontos de acordo com o envelope do funcionário. |
+| infoPgto | paisResidExt |  |  | Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.IDPAISEXTERIOR. Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.IDPAIS e obtem o código eSocial informado para o país do cadastro de de/para. Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.IDPAIS e obtem o código eSocial informado para o país do cadastro de de/para. |
+| infoPgtoExt | indNIF |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.SITUACAONIF.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.INDICATIVONIF.  Quando se trata de funcionário da Folha de Pagamento campo será calculado de acordo com:  - Caso PFDADOSRESIDEXTERIOR.IDPAISEXIGENIF seja diferente de vazio e igual a "Sim", será retornado 3;  - Caso PFDADOSRESIDEXTERIOR.INDICABENEF seja direfente de vazio e igual a "Sim", será retornado 2, caso contrario 1; |
+| infoPgtoExt | nifBenef |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.NIF.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.NIF.   Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.NIF |
+| infoPgtoExt | frmTribut |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.FORMATRIBUTACAO.  Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.FORMATRIBUTACAO.  Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.FORMATRIBUT |
+| endExt | endDscLograd |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.RUA.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.LOGRADOURO.   Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.LOGRADOURO |
+| endExt | endNrLograd |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.NUMERO.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.NUMERO.  Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.NUMERO |
+| endExt | endComplem |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.COMPLEMENTO.  Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.COMPLEMENTO.  Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.COMPLEMENTO |
+| endExt | endBairro |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.BAIRRO.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.BAIRRO.  Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.BAIRRO |
+| endExt | endCidade |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.CIDADE.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.CIDADE.   Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo GMUNICIPIO.NOMEMUNICIPIO |
+| endExt | endEstado |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.CODETD.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.ESTADO.  Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo GETD.NOME |
+| endExt | endCodPostal |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.CEP.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.CODIGOPOSTAL.  Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.CODPOSTAL |
+| endExt | telef |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFO.TELEFONE.   Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTRESIDEXTERIOR.TELEFONE.  Quando se trata de funcionário da Folha de Pagamento recupera o valor do campo PFDADOSRESIDEXTERIOR.TELEFONE |
+| infoIRComplem | dtLaudo |  |  | A data da moléstia grave será retornada de acordo com o campo complementar do funcionário informado no parametrizador do eSocial. |
+| infoDep | cpfDep |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFODEPENDENTE.CPF. Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTDEPEND.CPF. Quando se trata de autônomo do Folha de Pagamento recupera o valor do campo PFDEPEND.CPF |
+| infoDep | dtNascto |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFODEPENDENTE.DATANASCIMENTO. Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTDEPEND.DTNASCIMENTO. Quando se trata de autônomo do Folha de Pagamento recupera o valor do campo PFDEPEND.DTNASCIMENTO |
+| infoDep | nome |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFODEPENDENTE.NOME. Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTDEPEND.NOME. Quando se trata de autônomo do Folha de Pagamento recupera o valor do campo PFDEPEND.NOME |
+| infoDep | depIRRF |  |  | Quando se trata de autônomo do Gestão Financeira ou autônomo externo ou autônomo do Folha de Pagamento retorna o valor Sim |
+| infoDep | tpDep |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFODEPENDENTE.TIPODEPENDENTE. Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTDEPEND.TIPODEPENDENTE. Quando se trata de autônomo do Folha de Pagamento recupera o valor do campo PFDEPEND.GRAUPARENTESCO |
+| infoDep | descrDep |  |  | Quando se trata de autônomo do Gestão Financeira recupera o valor do campo FCFODEPENDENTE.DESCRICAO. Quando se trata de autônomo externo recupera o valor do campo PPAGTOAUTONOMOEXTDEPEND.DESCRICAODEPENDENCIA. Quando se trata de autônomo do Folha de Pagamento recupera o valor do campo PFDEPEND.DESCRICAODEPENDENCIA |
+| infoIRCR | tpCR |  |  | Campo será calculado de acordo com:  - Se o funcionário residir no exterior será retornado 047301;  - Caso o funcionário não resida no exterior e o envelope do funcionário possua eventos de RRA (código de cálculo CC207, CC211 ou CC215) será retornado 188901;  - Caso o funcionário não resida no exterior, o envelope do funcionário não possua eventos de RRA e o evento origem for S-1207 será retornado 353301;  - Caso o funcionário não resida no exterior, o envelope do funcionário não possua eventos de RRA, classificação tributária 22 (segurado especial), o funcionário possua eventos com código de cálculo CC004, CC030, CC061, CC084, CC107, CC346 ou CC348 e categoria eSocial [1XX] será retornado 056111;  - Caso o funcionário não resida no exterior, o envelope do funcionário não possua eventos de RRA, classificação tributária 22 (segurado especial), o funcionário possua eventos com código de cálculo CC049, CC106, CC340 ou CC347 e categoria eSocial [1XX] será retornado 056112;  - Caso o funcionário não resida no exterior, o envelope do funcionário não possua eventos de RRA, classificação tributária 22 (segurado especial), o funcionário possua eventos com código de cálculo CC049, CC106, CC340 ou CC347, categoria eSocial [1XX] e demitido será retornado 056113;  - Caso o funcionário não resida no exterior, o envelope do funcionário não possua eventos de RRA, classificação tributária diferente de 22, o funcionário possua evento com código de cálculo CC127 e categoria eSocial [1XX] será retornado 356201;  - Caso o funcionário não resida no exterior, o envelope do funcionário não possua eventos de RRA, classificação tributária diferente de 22, o funcionário possua eventos com código de cálculo CC004, CC030, CC049, CC061, CC084, CC106, CC107, CC340, CC346, CC347 ou CC348 e categoria eSocial 201, 202, 701, 711, 712, 731, 734, 738, 741, 751, 761, 771, 781 será retornado 058806;  - Caso o funcionário não resida no exterior, o envelope do funcionário não possua eventos de RRA, classificação tributária diferente de 22, o funcionário possua eventos com código de cálculo CC004, CC030, CC049, CC061, CC084, CC106, CC107, CC340, CC346, CC347 ou CC348 e categoria eSocial diferente de 201, 202, 701, 711, 712, 731, 734, 738, 741, 751, 761, 771, 781 será retornado 056107. |
+| dedDepen | tpRend |  |  | Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 31 será retornado 11;  Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 32 será retornado 12;  Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 33 será retornado 13. |
+| dedDepen | cpfDep |  |  | Recupera o valor do campo PFDEPEND.CPF informado no cadastro de dependentes |
+| dedDepen | vlrDedDep |  |  | Será feito o somatório da dedução de dependentes na competência de acordo com o código de incidência tributária da rubrica para o IRRF. |
+| penAlim | tpRend |  |  | Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 51 e possua eventos de RRA (código de cálculo CC206 ou CC394) será retornado 18 caso contrário será retornado 11;  Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 52 e possua eventos de RRA (código de cálculo CC214 ou CC395) será retornado 18 caso contrário será retornado 12;  Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 53 e possua eventos de RRA (código de cálculo CC210, CC396 ou CC397) será retornado 18 caso contrário será retornado 13;  Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 54 será retornado 14. |
+| penAlim | cpfDep |  |  | Recupera o valor do campo PFDEPEND.CPF informado no cadastro de dependentes |
+| penAlim | vlrDedPenAlim |  |  | Será feito o somatório do movimento de pensão alimentícia do beneficiário na competência de acordo com o código de incidência tributária da rubrica para o IRRF. |
+| previdCompl | tpPrev |  |  | Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 46, 47 ou 48 será retornado 1;  Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 61, 62 ou 66 será retornado 2;  Caso o código de incidência tributária da rubrica (codIncIRRF) seja igual a 63, 64 ou 65 será retornado 3. |
+| previdCompl | cnpjEntidPC |  |  | Recupera o valor do campo PPREVIDENCIACOMPLEMENTAR.CNPJ informado no cadastro de previdência complementar |
+| previdCompl | vlrDedPC |  |  | Será feito o somatório dos eventos de previdência complementar na competência de acordo com o código de incidência tributária da rubrica para o IRRFcom o campo "Décimo Terceiro" desmarcado no cadastro de eventos da previdência complementar. |
+| previdCompl | vlrDedPC13 |  |  | Será feito o somatório dos eventos de previdência complementar na competência de acordo com o código de incidência tributária da rubrica para o IRRF e com o campo "Décimo Terceiro" marcado no cadastro de eventos da previdência complementar. |
+| infoProcRet | tpProcRet |  |  | Recupera o valor do campo PPROCSUSPENSAOINC.TPPROCESSO informado no anexo Processo de suspensão de incidência no cadastro de eventos |
+| infoProcRet | nrProcRet |  |  | Recupera o valor do campo PPROCSUSPENSAOINC.NRPROCESSO informado no anexo Processo de suspensão de incidência no cadastro de eventos |
+| infoProcRet | codSusp |  |  | Recupera o valor do campo PPROCSUSPENSAOINC.CODINCSUSP informado no anexo Processo de suspensão de incidência no cadastro de eventos |
+| infoValores | indApuracao |  |  | Retorna 1 (Mensal) ou 2 (Anual) de acordo com o período de apuração que está sendo gerado |
+| infoValores | vlrNRetido |  |  | Recupera o valor dos eventos da ficha financeira cujo codIncIRRF em S-1010 = [9XXX] (exceto [9067]) |
+| planSaude | cnpjOper |  |  | Recupera o valor do campo VOPERADORASAUDE.CNPJ informado no cadastro de operadora de saúde |
+| planSaude | regANS |  |  | Recupera o valor do campo VOPERADORASAUDE.REGISTROANS informado no cadastro de operadora de saúde |
+| planSaude | vlrSaudeTit |  |  | Valor do evento – Valor do titular informado no histórico de assistência saúde |
+| infoDepSau | cpfDep |  |  | Recupera o valor do campo PFDEPEND.CPF informado no cadastro de dependentes |
+| infoDepSau | vlrSaudeDep |  |  | Valor do evento – Valor do dependente informado no histórico de assistência saúde |
+| infoReembMed | indOrgReemb |  |  | Recupera o valor do campo PFREEMBOLSOOPERADORA.INDICATIVOORIGEMREEMBOLSO |
+| infoReembMed | cnpjOper |  |  | Recupera o valor do campo VOPERADORASAUDE.CNPJ informado no cadastro de operadora de saúde |
+| infoReembMed | regANS |  |  | Recupera o valor do campo VOPERADORASAUDE.REGISTROANS informado no cadastro de operadora de saúde |
+| detReembTit | tpInsc |  |  | Retorna 1 ou 2 de acordo com o campo "CGCCPF" da tabela 'VENTIDADES' |
+| detReembTit | nrInsc |  |  | Recupera o valor do campo VENTIDADES.CGCCPF |
+| detReembTit | vlrReemb |  |  | Recupera o valor do campo PFREEMBOLSOOPERADORAMENSAL.VALORATUAL |
+| detReembTit | vlrReembAnt |  |  | Recupera o valor do campo PFREEMBOLSOOPERADORAMENSAL.VALORANTERIOR |
+| infoReembDep | cpfBenef |  |  | Recupera o valor do campo PFDEPEND.CPF informado no cadastro de dependentes |
+| detReembDep | tpInsc |  |  | Retorna 1 ou 2 de acordo com o campo "CGCCPF" da tabela 'VENTIDADES' |
+| detReembDep | nrInsc |  |  | Recupera o valor do campo VENTIDADES.CGCCPF |
+| detReembDep | vlrReemb |  |  | Recupera o valor do campo PFREEMBOLSOOPERADORAMENSAL.VALORATUAL |
+| detReembDep | vlrReembAnt |  |  | Recupera o valor do campo PFREEMBOLSOOPERADORAMENSAL.VALORANTERIOR |

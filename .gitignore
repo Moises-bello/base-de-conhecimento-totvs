@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# knowledge/ é versionado: é a documentação oficial TOTVS compartilhada com o time.
+
+# Dados locais: cache regenerável (mirror, busca, manifest) e credenciais do TDN — ver tools/mirror/paths.py
+.cache/
+tools/inputs/
+
+# Gerado por build-index a partir de knowledge/ (o blocklist de descontinuados e o _INDEX.md são versionados)
+tools/catalog/index.json

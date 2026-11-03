@@ -1,0 +1,13 @@
+---
+content_hash: 23156b3c25a8a44538215710f1cb545ea094dde9f17565d2f8d9bf78b49377a2
+fetched_at: '2026-06-29T00:11:07.010815+00:00'
+page_id: '63865910'
+product: rm
+source: tdn-rm
+title: RMFIS00004_Rotinas Municipais Antiga
+type: documentation
+url: https://tdn.totvs.com/display/LRM/RMFIS00004_Rotinas+Municipais+Antiga
+version: 3
+---
+
+

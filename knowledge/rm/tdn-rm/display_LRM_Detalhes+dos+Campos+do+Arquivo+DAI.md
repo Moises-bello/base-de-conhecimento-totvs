@@ -1,0 +1,35 @@
+---
+content_hash: 79d376a5f55c73ffa11a14c16e62aac39bb7f0d98935bc069e1f54f5d4d8e5d1
+fetched_at: '2026-06-29T00:10:53.307735+00:00'
+page_id: '578378980'
+product: rm
+source: tdn-rm
+title: Detalhes dos Campos do Arquivo DAI
+type: documentation
+url: https://tdn.totvs.com/display/LRM/Detalhes+dos+Campos+do+Arquivo+DAI
+version: 5
+---
+
+|  |  |  |
+| --- | --- | --- |
+| **Campo** | **Módulo de Venda** | **Módulo de Aluguel** |
+| REGISTRO | Fixo na geração | Fixo na geração |
+| DATA\_TRANSACAO | XVENDA.DAT\_VENDA | XALGCONTRATOLOC.DTVIGENCIAINICONTLOC |
+| COD\_NATUREZA | sempre 1 | sempre 2 |
+| COD\_SITUACAO | Se data da venda for depois da entrega do empreendimento é 1 Pronto, se não é 2 Construindo | sempre 1 - Pronto |
+| NUMERO\_IPTU | XSUBUNIDADE.NUMMAT | XALGIMOVELINSCRICAO.CODINSCRICAO |
+| VALOR\_TRANSACAO | XVENDA.VALOR\_VENDA | XALGCONTRATOLOC.VRFINALCONTLOC |
+| CEP | XSUBUNIDADE.CEP OU XEMPREENDIMENTO.CEP | XALGIMVOEL.CEP |
+| LOGRADOURO | XSUBUNIDADE.LOGRADOURO OU XEMPREENDIMENTO.LOGRADOURO | XALGIMVOEL.LOGRADOURO |
+| NUMERO | XSUBUNIDADE.NUMERO OU XEMPREENDIMENTO.NUMEROEND | XALGIMOVEL.NUMERO |
+| COMPLEMENTO | XSUBUNIDADE.COMPLEMENTO OU XEMPREENDIMENTO.COMPLEMENTOEND | XALGIMOVEL.COMPLEMENTO |
+| BAIRRO | XSUBUNIDADE.BAIRRO OU XEMPREENDIMENTO.BAIRRO | XALGIMOVEL.BAIRRO |
+| COD\_TIPO\_IMOVEL | XSUBUNIDADE.COD\_TIPO\_IMOVEL OU XEMPREENDIMENTO.COD\_TIPO\_IMOVEL | XALGIMOVEL.COD\_TIPO\_IMOVEL |
+| AREA\_UTIL\_CONSTRUIDA | Parametrizador DAI Venda - AREA\_UTIL\_CONSTRUIDA | Parametrizador DAI Aluguel - AREA\_UTIL\_CONSTRUIDA |
+| AREA\_TOTAL\_CONSTRUIDA | Parametrizador DAI Venda - AREA\_TOTAL\_CONSTRUIDA | Parametrizador DAI Aluguel - AREA\_TOTAL\_CONSTRUIDA |
+| ANO\_CONCLUSAO | XSUBUNIDADE.DATA\_ENTREGA OU XEMPREENDIMENTO.DAT\_ENTR\_EMPR | Não é preenchido |
+| AREA\_TERRENO | Parametrizador DAI Venda - AREA\_TERRENO | Parametrizador DAI Aluguel - AREA\_TERRENO |
+| QTD\_VAGAS\_GARAGEM | Quantidade de vagas na tabela XVAGA associado a subunidade | Parametrizador DAI Aluguel - QTD\_VAGAS\_GARAGEM |
+| QTD\_DORMITORIOS | Parametrizador DAI Venda - QTD\_DORMITORIOS | Parametrizador DAI Aluguel - QTD\_DORMITORIOS |
+| QTD\_BANHEIROS | Parametrizador DAI Venda - QTD\_BANHEIROS | Parametrizador DAI Aluguel - QTD\_BANHEIROS |
+| FRACAO\_IDEAL | XSUBUNIDADE.FRACAO\_IDEAL / 10000 | sempre 0 |

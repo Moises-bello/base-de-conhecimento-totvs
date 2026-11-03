@@ -1,0 +1,91 @@
+---
+content_hash: 51c9cabeea11992a06c9ba3d8a5b546cf666ea06db2f3e331dd6206e0cecad6b
+fetched_at: '2026-06-29T00:09:37.345538+00:00'
+page_id: '425459589'
+product: rm
+source: tdn-rm
+title: Fato - RH - Folha de Pagamento
+type: documentation
+url: https://tdn.totvs.com/display/LRM/Fato+-+RH+-+Folha+de+Pagamento
+version: 3
+---
+
+**Folha de Pagamento**
+
+---
+
+Nesta analise serão utilizados os parâmetros de Eventos de Beneficio, Empresa e Colaborador.  
+    
+ **Tabela: HLP**
+
+|  |  |  |
+| --- | --- | --- |
+| **DESCRIÇÃO** | **CAMPO**   **STAGE ÁREA** | **CAMPO NO RM** |
+| NÚMERO REGISTRO - PK | HLP\_RECNO | AUTOINC |
+| LINHA DE PRODUTO | HLP\_LINPRO | R |
+| INSTÂNCIA | HLP\_ISTCIA | 1 |
+| EMPRESA - FK | HLP\_EMPRES | MD5 (CODCOLIGADA) |
+| ESTABELECIMENTO - CÓDIGO | HLP\_FILIAL | CODFILIAL |
+| ESTABELECIMENTO - FK | HLP\_ESTABL | MD5(CODCOLIGADA + CODFILIAL) |
+| SINDICATO - FK | HLP\_SINDIC | MD5(PSINDIC.CODIGO) |
+| TURNO - FK | HLP\_TURNO | O RM NÃO POSSUI ESTA ENTIDADE |
+| EVENTO - FK | HLP\_EVENTO | EVENTOFINANC\_.CODIGO |
+| MÃO DE OBRA - FK | HLP\_TIPMOB | O RM NÃO POSSUI ESTA ENTIDADE |
+| PLANO CENTRO CUSTO - FK | HLP\_PLCCST | O RM NÃO POSSUI ESTA ENTIDADE |
+| CENTRO DE CUSTO - FK | HLP\_CCUSTO | MD5(PFRATEIOFIXO.CODCCUSTO) |
+| COLABORADOR - FK | HLP\_COLABR | MD5(CODPESSOA) |
+| UNIDADE DE NEGÓCIO - FK | HLP\_UNDNEG | O RM NÃO POSSUI ESTA ENTIDADE |
+| CARGO - FK | HLP\_CARGO | MD5(COLIGADA + CODCARGO) |
+| NÍVEL HIERÁRQUICO - FK | HLP\_NIVHIE | O RM NÃO POSSUI ESTA ENTIDADE |
+| FAIXA SALARIAL - FK | HLP\_FXASAL | MD5(COLIGADA + CODFAIXA) |
+| MOEDA - FK | HLP\_MOEDA | - |
+| CATEGORIA SALARIAL - FK | HLP\_CATSAL | MD5(PCODRECEB.CODCLIENTE) |
+| REGIÃO - FK | HLP\_REGIAO | MD5(CODMUNICIPIO + CODETD) |
+| ESTADO CIVIL - FK | HLP\_ESTCIV | MD5(PCODESTCIVIL.CODCLIENTE) |
+| FAIXA ETÁRIA - FK | HLP\_FXAETA | O RM NÃO POSSUI ESTA ENTIDADE |
+| GRAU DE INSTRUÇÃO - FK | HLP\_GRAINS | MD5(PCODINSTRUCAO.CODCLIENTE) |
+| TEMPO CASA - FK | HLP\_TPCASA | MD5(COLIGADA + CHAPA + DATAADMISSAO) |
+| TEMPO CARGO - FK | HLP\_TPCARG | MD5(COLIGADA + CHAPA + DATAMUDANCA) |
+| RELAÇÃO TRABALHO - FK | HLP\_RELTRB | MD5(PTPFUNC.CODCLIENTE) |
+| SITUAÇÃO COLABORADOR - FK | HLP\_SITCLB | MD5(PCODSITUACAO.CODCLIENTE) |
+| DTA PERÍODO INFORMADO (MÊS/ANO) | HLP\_DATA | PFUNC.DATAADMISSAO |
+| QTDE DEPENDENTES | HLP\_QDEPEN | HLP\_DEPEHRTRAB.QDEPEN |
+| QTDE HORAS PREVISTAS | HLP\_QHRPRV | HLP\_DEPEHRTRAB.QHRPRV |
+| QTDE HORAS EXTRAS | HLP\_QHREXT | HLP\_QTDEVLRHREXT.QHREXT |
+| VL HORAS EXTRAS | HLP\_VHREXT | HLP\_QTDEVLRHREXT.VHREXT |
+| QTDE HORAS TRABALHADAS | HLP\_QHRTRB | HLP\_QTDEVLRHRTRAB.QHRTRB |
+| VL HORAS TRABALHADAS | HLP\_VHRTRB | HLP\_QTDEVLRHRTRAB.VHRTRB |
+| VL ENCARGOS EMPRESA | HLP\_VENCEM | HLP\_ENCARGOS.VENCEM |
+| VL ENCARGOS COLABORADOR | HLP\_VENCCB | HLP\_ENCARGOS.VENCCB |
+| VL BENEFÍCIOS EMPRESA | HLP\_VBENEM | HLP\_BENEFICIOS.VBENEM |
+| VL BENEFÍCIOS COLABORADOR | HLP\_VBENCB | HLP\_BENEFICIOS.VBENCB |
+| VL FOLHA PAGAMENTO | HLP\_VFLHPG | HLP\_FLPAGTO.VFLHPG |
+| VL EVENTOS ESPECIAIS | HLP\_VEVESP | NÃO CONTEMPLADO |
+| QTDE COLABORADORES CALCULADOS | HLP\_QCBCAL | HLP\_QTDECOLABCAL.QCBCAL |
+| VL DESCONTO FOLHA PAGAMENTO | HLP\_VDESFP | HLP\_FLPAGTO.VDESFP |
+| QTDE COLABORADORES NÃO CALCULADOS | HLP\_QCBNCA | HLP\_QTDECOLABCAL.QCBNCA |
+| SEÇÃO - FK | HLP\_SECAO | MD5(COLIGADA + CODSECAO) |
+| LOCALIDADE | HLP\_LOCALI | O RM NÃO POSSUI ESTA ENTIDADE |
+| PLANO DE LOTAÇÃO | HLP\_PLOTAC | O RM NÃO POSSUI ESTA ENTIDADE |
+| UNIDADE DE LOTAÇÃO | HLP\_ULOTAC | O RM NÃO POSSUI ESTA ENTIDADE |
+| PRESTADOR DE SERVIÇO | HLP\_PRESRV | O RM NÃO POSSUI ESTA ENTIDADE |
+
+**Data de Extração:** Data do Período Informado (Mês/Ano).  
+    
+ **Conceito de Extração:** -.  
+    
+ **View:** HLP\_FolhaPagamento /  HLP\_FLPAGTO / HLP\_QTDEVLRHREXT / HLP\_QTDEVLRHRTRAB / HLP\_QTDECOLABCAL /  HLP\_FOLHAPAGAMENTO
+
+Esta fato deve ser preferencialmente em um período separado das demais, pois a mesma gera uma grande quantidade de dados.  
+    
+ **Parâmetros:** Nesta Fato além dos parâmetros gerais de extração serão utilizados os parâmetros descritos abaixo.   
+    
+ Os Encargos na linha RM são armazenados na tabela PENCARGO, para a identificação se estes encargos são da Empresa ou do Colaborador, serão utilizados os parâmetros:  
+    
+ • Encargos - Colaborador  
+ • Encargos - Empresa  
+    
+ Os Eventos na linha RM são armazenados na tabela PEVENTO, para a identificação se estes eventos são da Empresa, Colaborador ou Eventos de Hora Extra, serão utilizados os parâmetros:  
+    
+ • Eventos - Colaborador  
+ • Eventos - Empresa

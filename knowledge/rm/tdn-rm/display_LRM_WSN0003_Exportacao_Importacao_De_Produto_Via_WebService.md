@@ -1,0 +1,22 @@
+---
+content_hash: 0acb493ced3b9230f5bd85644254835ac467a9ce1ef4516080f44023953dae2b
+fetched_at: '2026-06-29T00:08:46.239257+00:00'
+page_id: '315906599'
+product: rm
+source: tdn-rm
+title: WSN0003_Exportacao_Importacao_De_Produto_Via_WebService
+type: documentation
+url: https://tdn.totvs.com/display/LRM/WSN0003_Exportacao_Importacao_De_Produto_Via_WebService
+version: 4
+---
+
+# Assunto
+
+|  |  |
+| --- | --- |
+| **Produto:** | TOTVS Gestão de Estoque, Compra e Faturamento |
+| **Versões:** | 11.82 e Superiores |
+| **Ocorrência:** | Importação/Exportação de Produto via WebService |
+| **Ambiente:** | Importação/Exportação de Produto |
+| **Passo a passo:** | Este documento tem por finalidade ensinar como realizar a Exportação / Importação de Produto via WebService. Será utilizado o aplicativo SoapUI para consumo do WebService do RM.   1ExportaçãoConfiguração do WS (Webservice) RM Executar o documento: <http://tdn.totvs.com/x/HoFXBQ>  Obs.: Acessando a página do Webservice RM (Orientado no link acima), clicar no link “wsDataServer/MEX?wsdl” e copiar o endereço desta página, este será utilizado na criação do projeto no SoapUI.(Exemplo: <http://localhost:8052/wsDataServer/MEX?wsdl>)   Criação do Projeto no SoapUI Acessar o aplicativo SoapUi (Disponível na web gratuitamente <http://www.soapui.org/>)  Solicitar um novo Projeto e informar:   * + Nome do Projeto   + O link WSDL copiado anteriormente na configuração do WS RM       Deverá ser criada uma **Request** na Operation **ReadRecord**, onde deverão ser definidas as propriedades listadas:   * + Name = Nome da Janela/página do **ReadRecord** para o projeto   + Encoding = UTF-8   + Username = Usuário do sistema RM   + Password = Senha do usuário do sistema RM       Dê um duplo clique na página já editada e uma nova janela será aberta. Preencher nas tags abaixo, os valores:   * + <tot:DataServerName> EstPrdDataBr </tot:DataServerName>   + <tot:PrimaryKey>***CODCOLIGADA;IDPRD***</tot:PrimaryKey>   + <tot:Contexto>***CODCOLIGADA=1;CODUSUARIO=mestre;CODSISTEMA=T***</tot:Contexto>       Após o preenchimento, clique em “Submit” (Play verde) para executar a leitura do registro. Caso esteja corretamente preenchido, será aberta uma nota tela com o XML do produto.   ImportaçãoCriação do Projeto no SoapUI Para importação do Produto, deverá copiar todo o XML gerado no passo de exportação.    O XML deve ser copiado de <![CDATA[<EstPrdBR > até </EstPrdBR>]]>    Após a cópia, deverá ser criada uma nova **Request** na Operation **SaveRecord**, respeintando a configuração:   * Name = Nome da Janela/página do **SaveRecord**para o projeto * Encoding = UTF-8 * Username = Usuário do sistema RM * Password = Senha do usuário do sistema RM     Feita a configuração das propriedades, será carregada a tela onde deverá informar os dados a serem importados.   * <tot:DataServerName> **EstPrdDataBr** </tot:DataServerName> * <tot:XML>***XML DO PRODUTO A SER IMPORTADO***</tot:XML> * <tot:Contexto>***CODCOLIGADA=1;CODUSUARIO=mestre;CODSISTEMA=T***</tot:Contexto>     Após preencher os dados, deverá atentar-se aos detalhes:   1. Para criação de um novo registro (Produto), obrigatoriamente deverá alterar o campo IDPRD para o valor -1. Caso tente importar utilizando um IDPRD fixo, o sistema irá tentar ATUALIZAR o registro em questão e não importar. 2. O IDPRD não está contido apenas no grupo TPRODUTO, ele é listado em todas as tabelas filhas da TPRODUTO (TPrdFil, TPrdCompl, dentre outras). 3. Além da alteração do IDPRD, vale salientar que também deve-se alterar o CODIGOPRD (Código do Produto). Caso altere apenas o IDPRD o RM retornará erro informando que o produto com o código X já existe.     Feita a alteração no XML, para realizar o teste, clique no ícone “Submit” (Play verde). Neste momento, o SoapUI abrirá uma nova tela para consultar o retorno da ação.  Caso o produto seja incluído com sucesso, o SoapUI retornará as chaves do DataServer. No caso do produto, retornará CODCOLIGADA e IDPRD.  Está feito! Basta acessar o RM e visualizar o produto que foi incluído! |
+| **Observações:** | Para mais informações:    [Consulte o WikiHelp TOTVS](http://wikihelp.totvs.com.br/WikiHelp/FIS/FIS.ECF.aspx)    **COMUNIDADE** [R@Materiais e Suprimentos](http://fluig.totvs.com/portal/p/10097/subject/rmateriais)    **Canais de Atendimento:**  **Abertura de Chamados** Através do Portal Totvs [www.suporte.totvs.com.br](http://www.suporte.totvs.com.br/)  **Telefônico:** 4003-0015 Escolhendo as opções 2 – (Software), 2 – (Suporte Técnico), 3 – (RM), 5 – (Materiais) |

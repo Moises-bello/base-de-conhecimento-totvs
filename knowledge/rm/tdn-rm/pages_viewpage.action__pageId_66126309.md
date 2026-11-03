@@ -1,0 +1,120 @@
+---
+content_hash: d19c85da55d2a0d7fe9eaf6f6a917ff44d393f94895b724ae3993b564e307ec5
+fetched_at: '2026-06-29T00:11:13.478220+00:00'
+page_id: '66126309'
+product: rm
+source: tdn-rm
+title: NFS-e - Verificar cadastros para emissão de NFS-e
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=66126309
+version: 2
+---
+
+|  |  |  |
+| --- | --- | --- |
+| **Produto** | **:** | NF-e                        **Versão:***a partir 11.40* |
+| **Processo** | **:** | Verificar cadastros para emissão de NFS-e |
+| **Subprocesso** | **:** | Verificar cadastros para emissão de NFS-e |
+| **Data da publicação** | **:** | 09/07/2013 |
+
+**Introdução:**
+
+Este documento tem como objetivo orientar os cadastros que devem ser realizados/revisados para correta de emissão de NFS-e.
+
+**Procedimentos:** 
+
+**Tipo de Documento**
+
+Acesse o RM Nucleus no seguinte menu: Cadastros | Tabelas Auxiliares | Tipo de Documento.
+
+Clique em “Incluir”  | Na nova tela, aba “Identificação” Preencha os campos “Código” e “Descrição”, na aba “Dados Adicionais” campo “Código do Modelo do Documento” deve ser preenchido “01” ou em branco, Salve o cadastro.
+
+**Serie**
+
+Para Emissão de NFS-e deve ser verificado junto a prefeitura qual a serie deve ser utilizada.
+
+Acesse o RM Nucleus no seguinte menu: Opções | Parâmetros | RM Nucleus | 04.01 – Parâmetros Gerais | 04.01.03 Numeração do Movimento | 04.01.03.01 Numero Principal | 04.01.03.01.01 Numeração Geral | Etapa “Numeração Geral” | Campo “Série”, clique em  | na tela que irá aparecer clique em “Incluir”  | na nova tela preencha a Serie a Descrição Salve o cadastro.
+
+**Cliente/Fornecedor**
+
+Acesse o RM Nucleus no seguinte menu: Cadastros | Clientes/Fornecedores.
+
+Para cada cliente que estará envolvido em alguma NFS-e devem ser verificados os seguintes campos: Aba Identificação | campo Inscrição Municipal: pode ser preenchida normalmente com ou sem mascará.
+
+Campo Nome e Nome Fantasia: devem ser preenchidos com mais de um caracter.
+
+Aba Endereço | Campo CEP: este campo é obrigatório para algumas prefeituras(consulte o manual de sua prefeitura), no caso de ser preenchido ele deve conter 8 numero mesmo se o cliente for do exterior.
+
+Campos Rua e Bairro: estes campos são obrigatórios e devem ser preenchidos com mais de um caracter.
+
+Campo Número: é obrigatório, não aceita o valor “0” (zero), deve ser preenchido apenas com números ou S/N (Maiúsculo).
+
+Campos Tipo Rua, Tipo Bairro, País, Estado e Município: Estes campos devem ser preenchidos obrigatoriamente.
+
+Campo email: Este campo é obrigatório para algumas prefeituras (consulte o manual de sua prefeitura).
+
+**Filial**
+
+Acesse o RM Nucleus no seguinte menu: Cadastros | Filiais.
+
+Para a Filial emissora de NFS-e deverá ser verificado os seguinte campos:
+
+Aba Identificação | Campo Nome: deve ser preenchido obrigatoriamente com mais de um caracter.
+
+Aba Endereço | Campo CEP: este campo é obrigatório para algumas prefeituras (consulte o manual de sua prefeitura), no caso de ser preenchido ele deve conter 8 numero.
+
+Campos Rua e Bairro: estes campos são obrigatórios e devem ser preenchidos com mais de um caracter.
+
+Campo Número: é obrigatório, não aceita o valor “0” (zero), deve ser preenchido apenas com números ou S/N (Maiúsculo).
+
+Campos Tipo Rua, Tipo Bairro, País, Estado e Município: Estes campos devem ser preenchidos obrigatoriamente.
+
+Campo email: Este campo é obrigatório para algumas prefeituras (consulte o manual de sua prefeitura).
+
+Aba Dados Adicionais | campo Inscrição Municipal: é obrigatório e pode ser preenchido normalmente com ou sem mascará.
+
+Campo CNAE: É obrigatório e pode ser preenchido com ou sem Mascará.
+
+**País**
+
+Para cada País cadastrado no sistema deverá ser informada a tabela de classificação BACEN com o código referente a cada país.
+
+Acesse o RM Nucleus no seguinte menu: Cadastros | Países | Anexos | Codificação de País.
+
+Para Cada País clique em “Incluir”  | na tela que aparecerá o campo “Classificação” deve ser preenchido com a classificação BACEN e o campo “Código País” deve ser preenchido com o código referente ao país conforme [Tabela online do BACEN](http://www.bcb.gov.br/rex/Censo2000/port/manual/pais.asp?idpai=censo2000inf).
+
+**Municípios**
+
+Para cada município envolvido na emissão de NFS-e deve ser preenchida a classificação de município IBGE com o código IBGE referente a cada município.
+
+Acesse o RM Nucleus no seguinte menu: Cadastros | Tabelas Auxiliares | Municípios | Anexos | Codificação de Municípios.
+
+Para Cada município clique em “Incluir”  | na tela que aparecerá, o campo “Classificação” deve ser preenchido com a classificação IBGE e o campo “Código” deve ser preenchido com o código referente ao município conforme [tabela online do IBGE.](http://www.ibge.gov.br/home/geociencias/areaterritorial/area.shtm)
+
+**Serviço**
+
+Todos os Serviços que serão utilizados na Emissão da NFS-e devem ter estes campos verificados.
+
+Acesse o RM Nucleus no seguinte menu: Cadastros | Produtos e Serviços.
+
+Em cada Serviço | Aba Identificação | Campo Tipo, é Obrigatório e deve ser selecionada a opção Serviço.
+
+Campo “Nome Fantasia” é obrigatório.
+
+Aba Detalhes | Descrição | Campo “Descrição” campo obrigatório, ele é compõe a TAG discriminação do Serviço.
+
+Acesse anexos | “Tributos do Produto Por Município” | na próxima tela clique em “Incluir” , deve ser incluído um registro para cada tributo do tipo ISS que será utilizado na NFS-e com os campos “Alíquota” e “Código do Serviço por Município” preenchido obrigatoriamente para a NFS-e, além dos campos “Sigla”, “Estado” e “Código do Município” que são obrigatórios para salvar o cadastro. **IMPORTANTE: O tributo deve ser cadastrado para o município da FILIAL.**
+
+Acesse Anexos | Dados Fiscais do Produto | campo “Código do Serviço Federal” este campo é obrigatório para algumas prefeituras (consulte o manual da sua prefeitura tag item da lista de serviço).
+
+**Para maiores informações:**
+
+**[Consulte o WikiHelp TOTVS](http://wikihelp.totvs.com.br/WikiHelp/default.aspx)**
+
+**COMUNIDADE **R**[@](https://totvs.byyou.com/?space=rnfe)Nfe**
+
+**Canais de Atendimento:**
+
+**Chamado:** Através do Portal Totvs [www.suporte.totvs.com.br](http://www.suporte.totvs.com.br/)
+
+**Telefônico:** 4003-0015 Escolhendo as opções: 2 – (Software), 2 – (Suporte Técnico), 3 - (RM), 3 - (Fiscal), 3 - (Nota Fiscal Eletrônica)

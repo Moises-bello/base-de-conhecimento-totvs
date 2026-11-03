@@ -1,0 +1,60 @@
+---
+content_hash: d02af891b51b6625e599e7908dbd5945bbd3c585989abefb272f64a64000d5f8
+fetched_at: '2026-06-29T00:05:51.757346+00:00'
+page_id: '1055099850'
+product: rm
+source: tdn-rm
+title: FOPTRP0030 - Opção de Desistência de Vale-Transporte
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=1055099850
+version: 3
+---
+
+## **CONTEÚDO**
+
+1. 1. **Versão**
+   2. **Visão Geral**
+   3. **Exemplo de utilização**
+   4. **Tela Visão de Dados/Relatório**
+      1. **Principais Campos e Parâmetros**
+   5. **Tabelas utilizadas**
+
+   ## **01. VERSÃO**
+
+   O Recurso estará disponível a partir das versões abaixo:
+
+   * 12.1.2606 e superiores
+
+   ## **02. VISÃO GERAL**
+
+   O objeto de negócio Declaração de Opção do Vale Transporte tem como finalidade exibir a intenção de utilização de receber o Vale Transporte.   
+     
+   Para mais informações pode ser acessado o link com informações do [Objeto de Negócio](https://tdn.totvs.com/pages/viewpage.action?pageId=1054771562)
+
+   ## **03. EXEMPLO DE UTILIZAÇÃO**
+
+   Visão de Dados
+
+   Visão de dados utilizando o Objeto de Negócios disponibilizado que retorna os dados Declaração de Opção do Vale Transporte
+
+   Relatório
+
+   Gerando o relatório utilizando o SmartView:
+
+## **04. TELA VISÃO DE DADOS/RELATÓRIO**
+
+**Principais Campos e Parâmetros**
+
+| Campo | Descrição |
+| --- | --- |
+| CPF | Neste campo deverá informar um CPF. Caso o usuário queira gerar para todos os CPF's, deverá informar -1 |
+| Matrícula | Neste campo deverá informar uma ou mais matrículas de funcionários, clicando em + e adicionando as chapas que deseja retornar os dados referente a Relação de Comprovante de entrega de Vale Transporte. |
+
+## **05. TABELAS UTILIZADAS**
+
+* GCOLIGADA
+* GFILIAL
+* PFUNC
+* PPESSOA
+* PTARIFA
+* PFVALETR

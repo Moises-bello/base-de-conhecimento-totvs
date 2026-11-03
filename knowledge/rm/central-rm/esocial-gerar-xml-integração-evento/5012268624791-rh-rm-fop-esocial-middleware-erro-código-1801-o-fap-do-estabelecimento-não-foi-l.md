@@ -1,0 +1,60 @@
+---
+article_id: 5012268624791
+category: eSocial - Gerar XML/ Integração Evento
+content_hash: c562d8583a0541fe1d8f2d60ead83acedd12dd225d7c3c9d32dfc029918522ad
+fetched_at: '2026-06-28T22:47:13.071641+00:00'
+product: rm
+section_id: 1500000834381
+source: central-rm
+title: 'RH - RM - FOP - eSocial - Middleware - Erro código 1801: O FAP do estabelecimento
+  não foi localizado na base'
+type: support-article
+updated_at: '2025-12-29T14:33:47Z'
+url: https://centraldeatendimento.totvs.com/hc/pt-br/articles/5012268624791-RH-RM-FOP-eSocial-Middleware-Erro-c%C3%B3digo-1801-O-FAP-do-estabelecimento-n%C3%A3o-foi-localizado-na-base
+---
+
+![time.png](https://centraldeatendimento.totvs.com/hc/article_attachments/20974651276951) Tempo aproximado para leitura: **00:02:00 min**  
+  
+**Ocorrência**  
+Ao enviar o evento S-1005 de uma alteração do FAP é apresentado "**Erro código 1801: O FAP do estabelecimento não foi localizado na base**.  
+  
+**Ambiente**  
+TOTVS RH - TOTVS RH (Linha RM) - Folha de Pagamento - eSocial - Todas as versões  
+  
+**Causa**  
+Mediante a [notícia publicada no site do eSocial no dia 26/07/2021](https://www.gov.br/esocial/pt-br/noticias/ajuste-no-procedimento-de-informacao-do-fap-em-s-1005-versao-s-1.0), foi realizado um ajuste no procedimento de informação do FAP no evento S-1005 para a versão S-1.0.
+
+Conforme orientações recebidas no grupo de homologação oficial do eSocial, esse ajuste será temporário até que a situação no ambiente do governo seja regularizada, uma vez que somente deve preencher os campos GILRAT e FAP quando houver processo judicial/administrativo com decisão/sentença favorável à utilização de alíquota GILRAT ou do FAP diferentes do que é definido pela administração, nos demais casos, os referidos campos não devem ser preenchidos (ver item 3.1 no Manual de Orientação do eSocial).
+
+É importante lembrar também que, a situação ocorre apenas para alguns CNPJs.
+
+Diante disso, caso ao enviar o S-1005 para o governo apresente o erro supracitado, o usuário deverá seguir as instruções abaixo:
+
+**Solução**  
+1 - Acesse **RH | Folha de Pagamento | eSocial | Fila de Eventos;**
+
+![](https://tdn.totvs.com/download/attachments/632113829/image2021-8-2_15-51-34.png?version=1&modificationDate=1627933877110&api=v2)
+
+2 - Verifique o evento na fila que foi rejeitado, conforme exemplo abaixo;
+
+![image2021-8-2_15-53-29.png](https://tdn.totvs.com/download/attachments/632113829/image2021-8-2_15-53-29.png?version=1&modificationDate=1627933877067&api=v2)
+
+3 - Clique no processo **Editar XML;**
+
+Após isso encontre a *tag* **cnaePrep** e dê um ***enter*** e acrescente as *tag's* abaixo, em seguida clique em **Salvar**.
+
+          <aliqGilrat>  
+            <fap>1.0000</fap>  
+          </aliqGilrat>
+
+O XML será salvo com a informação do FAP.
+
+![](https://tdn.totvs.com/download/attachments/632113829/image2021-8-2_16-6-18.png?version=1&modificationDate=1627933876827&api=v2)
+
+5 - Selecione o evento S-1005 e faça o envio, após a atualização de status evento será aceito com sucesso.
+
+![](https://tdn.totvs.com/download/attachments/632113829/image2021-8-2_16-17-5.png?version=1&modificationDate=1627933876750&api=v2)
+
+**Saiba mais**  
+Para mais informações, acesse:  
+     - [RH - RM - FOP - eSocial - Middleware: Edição de XML](https://centraldeatendimento.totvs.com/hc/pt-br/articles/4409629817111-RH-RM-FOP-eSocial-Middleware-Edi%C3%A7%C3%A3o-de-XML)

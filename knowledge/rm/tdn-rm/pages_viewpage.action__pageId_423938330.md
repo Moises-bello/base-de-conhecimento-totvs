@@ -1,0 +1,100 @@
+---
+content_hash: 5c9157a58708d267b6353fe2ca52f66a23dbf40b259ea84aec5ef9ba9912dc31
+fetched_at: '2026-06-29T00:09:26.604962+00:00'
+page_id: '423938330'
+product: rm
+source: tdn-rm
+title: Detalhamento do Cálculo da Avaliação Patrimonial
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=423938330
+version: 3
+---
+
+Código do bem: **01.01.104**
+
+Data aquisição = **01/07/2010**
+
+Valor Aquisição = **R$ 30.000,00**
+
+Valor Base de Depreciação = **R$ 30.000,00**
+
+Taxa de depreciação anual = **20% ao ano**
+
+O mês de cálculo corrente da coligada **1 é 07/2011**. No início deste mês o bem possui o valor de R$ 6.000,00 de depreciação acumulada.  
+ 
+
+Informado o valor de mercado do veículo é R$ 28.000,00 e a vida útil restante é de 48 meses (4 anos restante). Após informa o valor de mercado temos os seguintes dados:
+
+A taxa de depreciação agora passa a ser 1,7157 ao mês, esta taxa foi calculada da seguinte maneira:
+
+**1a** - O bem possui um valor contábil de R$ 24.000,00 que corresponde ao valor base do bem menos a depreciação acumulada (R$ 30.000,00 – 6.000,00).
+
+O valor de mercado do bem é R$ 28.000,00, após a avaliação o valor contábil do bem terá que chegar neste resultado R$ 28.000,00.
+
+**2b** - O valor de R$ 28.000,00 será depreciado em 48 meses, então temos:
+
+R$ 28.000,00 / 48 = R$ 583,33 ao mês.
+
+O próximo passo é saber quanto este valor de depreciação mensal representa no novo valor base do bem para chegarmos à taxa nova taxa de depreciação mensal.
+
+OBSERVAÇÃO: O cálculo de depreciação do sistema é feito aplicando a taxa de depreciação mensal com base no valor base de depreciação, o sistema não realiza o cálculo de depreciação com base no valor residual (valor contábil).
+
+**3c** - Cálculo do novo valor base:
+
+Valor Contábil antes da avaliação = R$ 24.000,00
+
+Valor de Mercado = R$ 28.000,00
+
+R$ 28.000,00 – R$ 24.000,00 = R$ 4.000,00
+
+R$ 4.000,00 será o valor da avaliação que será somado ao valor base do bem para encontrar a taxa de depreciação mensal.
+
+R$ 30.000 + R$ 4.000,00 = R$ 34.000,00 - este será o novo valor base do Bem após a avaliação patrimonial.
+
+**4d -** Cálculo da nova taxa mensal:
+
+Se pegarmos o valor de depreciação mensal calculado no item **2b** temos:
+
+R$ 583,33 / R$ 34.000,00 = 0,017156765 \* 100 = **1,7157% ao mês**.
+
+Após o processo de avaliação, o bem possui o valor contábil de **R$ 28.000,00** que corresponde ao valor de mercado que foi informado:
+
+**R$ 34.000,00** (novo valor base) menos **R$ 6.000,00** (depreciação acumulada no início do mês) = **R$ 28.000,00** (valor de mercado informado para o bem).
+
+**5e -** Quando é realizado o processo de avaliação, o sistema irá criar uma moeda de avaliação nos cálculos do bem. Com isto, cada moeda terá sua taxa de depreciação do período, pois as moedas correspondem a um único bem, então devem terminar a depreciação juntas.
+
+A taxa de depreciação mensal apresentada no processo de avaliação leva em consideração o novo valor total do bem, mas o sistema desmembra os valores criando a moeda de avaliação para que a realização desta avaliação possa ser controlada corretamente.
+
+Em nosso exemplo temos:
+
+**Moeda Normal:** Vamos editar o cálculo da moeda normal e verificar a taxa de depreciação do período desta moeda.
+
+A taxa de período é 1,6666% ao mês:
+
+Valor residual da moeda no início do mês 07 é **R$ 24.000,00**. O saldo residual acima de **R$ 23.500,00** já está com a depreciação mensal de **R$ 500,00** embutida, então acrescentamos este valor.
+
+Se pegarmos **R$ 24.000,00** / 48 (vida útil restante) = **R$ 500,00**
+
+Pegamos este valor e dividimos pelo valor base = **(R$ 500,00 / R$ 30.000,00)** = 0,016666667 x 100 = 1,6667% ao mês = **taxa do período.**
+
+**5e1 -** Vamos fazer o mesmo cálculo para a moeda de avaliação. Em nosso exemplo o sistema apresentou a seguinte taxa do período para a moeda de avaliação no cálculo do mês 07:
+
+Para chegar na taxa do período da moeda de avaliação o sistema realizou o seguinte cálculo:
+
+O valor residual da moeda de avaliação no início do mês, em nosso exemplo é **R$ 4.000,00**. Se pegarmos **R$ 4.000,00 / 48** meses (vida útil restante) = **R$ 83,33**.
+
+Pegamos este valor e dividimos pelo valor base da avaliação - **(R$ 83,33 / R$ 4.000,00)** = 0,02083 \* 100 = **2,0833%**  que corresponde a taxa do período do mês 07.
+
+Desta forma ao final dos 48 meses os valores das duas moedas (moeda normal e moeda de avaliação) terminarão a depreciação juntas.
+
+Exemplo:
+
+1,666666667%  de R$ 30.000,00 = R$ 500,00 (valor de depreciação da moeda normal)
+
+2,083333333%  de R$ 4.000,00 = R$ 83,33 (valor de depreciação da moeda de avaliação)
+
+R$ 500,00 + R$ 83,333333333 = R$ 583,333333333
+
+Se multiplicarmos R$ 583,333333333 por 48 meses chegamos ao valor de 28.000,00.
+
+OBSERVAÇÃO: O sistema apresenta os valores em reais com 2 casas decimais, então poderão ocorrer pequenas diferenças de arredondamento no cálculo do sistema em relação ao cálculo que apresentamos neste documento.

@@ -1,0 +1,49 @@
+---
+content_hash: 927b0a53ac85326b1d9bf647b111ffb2e67b0db705dd94417be3cb70d3f5bb44
+fetched_at: '2026-06-29T00:10:01.954833+00:00'
+page_id: '452718811'
+product: rm
+source: tdn-rm
+title: Exemplo Arquivo XML
+type: documentation
+url: https://tdn.totvs.com/display/LRM/Exemplo+Arquivo+XML
+version: 2
+---
+
+**Exemplo Arquivo XML**
+
+ <REGISTRO>  <LOTE>
+
+<IDLOTE>**1**</IDLOTE>
+
+<CA>**CA15478**</CA>
+
+<DTAQUISICAO>**15/10/2008**</DTAQUISICAO>
+
+<DTVALIDADE>**16/10/2008**</DTVALIDADE>
+
+<DTDURABILIDADE>**17/10/2008**</DTDURABILIDADE>
+
+<DTVALIDADECA>**18/10/2008**</DTVALIDADECA>
+
+<DURABILIDADE>**350**</DURABILIDADE>
+
+<CRI>**CERT. 5489**</CRI>
+
+<CRF>**CERT. 5183599**</CRF>
+
+<FABRICANTE>**FABRICANTE LTDA.**</FABRICANTE>
+
+<OBSERVACOES>**LOTE OK**</OBSERVACOES>
+
+<HIGIENIZADO>**S**</HIGIENIZADO>
+
+<INVALIDO>**N**</INVALIDO>
+
+<CODFILIAL>**1**</CODFILIAL>
+
+<CODSECAO>**01.01**</CODSECAO>
+
+<QUANTIDADE>**180**</QUANTIDADE>
+
+</LOTE> </REGISTRO>

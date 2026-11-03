@@ -1,0 +1,22 @@
+---
+content_hash: c48eaff7eedfd54beb5806fb7db791c977c7178a1a571ab3807c858f2a302129
+fetched_at: '2026-06-29T00:08:41.448383+00:00'
+page_id: '286728400'
+product: rm
+source: tdn-rm
+title: RMFIS00003_Apuração de Tributos - IRRF
+type: documentation
+url: https://tdn.totvs.com/pages/viewpage.action?pageId=286728400
+version: 8
+---
+
+# Assunto
+
+|  |  |
+| --- | --- |
+| **Produto:** | Totvs Gestão Fiscal |
+| **Versões:** | 12.x |
+| **Ocorrência:** | Apuração do IRRF |
+| **Ambiente:** |  |
+| **Passo a passo:** | O sistema RM Liber apenas gera o vencimento da fatura, baseado nas informações do lançamento financeiro. Vide consistências do sistema, para correta geração da guia:  **A) Verifique a Data Base para Geração do IRRF-PF/PJ nos parâmetros do sistema de Gestão Financeira.**  **AMBIENTE – PARÂMETROS - TOTVS GESTÃO FISCAL - INTEGRAÇÃO – FINANCEIRO – LANÇAMENTOS A PAGAR – GERAÇÃO IRRF PF/PJ.**  Obs.: O parâmetro e o período de apuração devem estar condizentes.  Obs.: Uma vez alterado o parâmetro, apenas terá efeito para os novos lançamentos, realizados após a alteração. Verifique no cadastro do tributo, quanto ao tipo Tributo utilizado:    Exemplo:    Verifique a Integração entre sistemas **Liber x Fluxus e Fluxus x Liber**:    ***Acesse o menu AMBIENTE - PARÂMETROS - INTEGRAÇÕES***  Exemplo da tela:        **Consistências no lançamento financeiro:**     * + - Deve ser observado se o Tipo de documento utilizado **"GERA IRRF"**;      - A pagar ou a receber;     - No cadastro do cliente/fornecedor, Pessoa Física ou Jurídica;     - Valores do **IRRF** e código da Receita.   Verifique os valores de IR e código da Receita.          **Processo de geração de guias:**     * + Verifique se o período de apuração está encerrado (RMLiber – menu Lançamentos – período de apuração).   + Seleciona o periodo de apuração e clica-se em Processos – Encerramento Período       Após período encerrado, clica em **Processos - Opção de geração de guias a partir de lançamentos financeiros**.            Será exibido uma nova tela para ser informado os dados da fatura e executar o processo. Os campos referem às informações financeiras e pode ser consultado no Help do sistema maiores informações a respeito aos significados dos campos.       Após executar o processo, o sistema emitirá uma mensagem de processo realizado com sucesso:  Para visualizar as guias geradas, edite o período de apuração, clique na opção Anexos – Guias Darf ( Obs.: Pode ser criado um filtro pelo campo "Valor Apurado" e operador "Is Not Null")              **INFORMAÇÕES ADICIONAIS – POSSÍVEIS ERROS ENCONTRADOS**     * Erro 1: Processo deverá ser executado em períodos da Filial Matriz!     Solução 1: Deve ser verificado os parâmetros do sistema: **AMBIENTE – PARÂMETROS – TOTVS GESTÃO FISCAL – APURAÇÃO DE TRIBUTOS – IRRF PF/PJ –Etapa Guias recolhimento 4/4**.  Se não estiver selecionado por Filial, a geração das guias será realizada apenas em períodos de apuração da filial definida como Matriz ( **Ambiente – Parâmetros – Totvs Gestão Fiscal – Apuração de tributos – Etapa Filial Matriz**).  Significado das opções de Regras Geração **DARF**:   * + Por Beneficiários: Gera todos os impostos na Matriz e agrupando por CNPJ.    + Por Filial: Agrupa por Código da Receita, porem por Unidade.    + Por Lançamento: Agrupa na Matriz, mas por lançamento.      * Erro 2: Erro no processo: Não existem Lançamentos Fiscais com incidência do imposto no período com os filtros informados!         Solução 2: Rever as consistências do sistema tratadas anteriormente, pois deve existir algum lançamento onde o tipo documento não é gerador de IRRF ou o tributo IRRF está sem código da Receita ou não valores do IR ou o parâmetro de data base não esta de acordo. Obs.: Quando os lançamentos são originados do aplicativo RM Labore a apuração será realizada pela data de emissão independente da data parametrizada e será consistido o tipo documento vinculado nos lançamentos do Labore.     * Erro 3: "Geração de Guias Automaticamente" no lugar de "Geração de Guias a partir de Lançamentos Financeiros".     Solução 3:  Deve ser verificado os parâmetros do sistema: **AMBIENTE** **– PARÂMETROS – TOTVS GESTÃO FINANCEIRA – LANÇAMENTO – INTEGRAÇÃO FISCAL.**Caso não esteja marcada a flag "Lançamentos de Tributos serão Faturados pelo RM Liber", favor marcar, reiniciar o RM e observar esta opção (Geração de Guias a partir de Lançamentos Financeiros) novamente. |
+| **Observações:** |  |

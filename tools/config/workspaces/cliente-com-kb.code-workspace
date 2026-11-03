@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Projeto cliente",
+      "path": "<CAMINHO_DO_SEU_PROJETO>"
+    },
+    {
+      "name": "KB TOTVS",
+      "path": "<CAMINHO_DA_BASE>"
+    }
+  ],
+  "settings": {
+    "github.copilot.chat.codeGeneration.instructions": [
+      "Sempre que a pergunta for sobre TOTVS (Fluig, RM, Protheus) ou SQL RM, consulte a pasta KB TOTVS: rode tools/sync.py search. Não invente tabelas/colunas. Instruções: tools/config/global-ai-instructions.md"
+    ]
+  }
+}
